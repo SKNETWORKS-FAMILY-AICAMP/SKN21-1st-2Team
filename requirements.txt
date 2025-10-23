@@ -1,0 +1,13 @@
+python-dotenv
+python
+pymysql
+pandas
+numpy
+matplotlib
+streamlit
+jsonschema
+jsonschema-specifications
+selenium
+#requests
+#jupyter
+#beautifulsoup4
