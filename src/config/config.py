@@ -22,7 +22,7 @@ DB_CONFIG = {
 # 데이터 경로
 DATA_PATH = {
     "RAW": "data/raw",
-    "PROCESSED": "data/processd"
+    "PROCESSED": "data/processed"
     
 }
 
