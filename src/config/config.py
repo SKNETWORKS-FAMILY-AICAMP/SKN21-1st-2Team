@@ -35,8 +35,6 @@ LOG_CONFIG = {
 APP_CONFIG = {
     "title": "국내 친환경 자동차 비교 분석 서비스",
     "page_icon": "🚗",
-=======
     "database": os.getenv("DB_NAME", "eco_car_db"),
     "port": int(os.getenv("DB_PORT", 3306))
->>>>>>> dde48335435b177e09137b9089194e0a447a2b08
 }
