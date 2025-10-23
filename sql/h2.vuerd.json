@@ -4,8 +4,8 @@
   "settings": {
     "width": 2000,
     "height": 2000,
-    "scrollTop": -99,
-    "scrollLeft": -3,
+    "scrollTop": -107,
+    "scrollLeft": -1,
     "zoomLevel": 0.97,
     "show": 431,
     "database": 4,
@@ -80,7 +80,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1761209591894,
+          "updateAt": 1761220596746,
           "createAt": 1761190868660
         }
       },
@@ -164,15 +164,15 @@
           "abTKhAbB7aGxgxKnV4ikQ"
         ],
         "ui": {
-          "x": 104.8839,
-          "y": 426.3015,
+          "x": 82.2035,
+          "y": 432.4871,
           "zIndex": 47,
           "widthName": 118,
           "widthComment": 144,
           "color": ""
         },
         "meta": {
-          "updateAt": 1761209599473,
+          "updateAt": 1761218566940,
           "createAt": 1761197773071
         }
       },
@@ -181,9 +181,9 @@
         "name": "ev_stations_by_region",
         "comment": "지역별 전기차 충전소 개수",
         "columnIds": [
+          "lwJdaIpR0R7Zrp-yNqL1Q",
           "0J-x-ZKZFVp9FzKlatE7p",
-          "t10wdodjYYxGEf7Q_h7mt",
-          "lwJdaIpR0R7Zrp-yNqL1Q"
+          "t10wdodjYYxGEf7Q_h7mt"
         ],
         "seqColumnIds": [
           "asTKRbpuA1K3E7iSVmwES",
@@ -198,9 +198,9 @@
           "07yhhGXw5JDZ_XZYnFkGK",
           "byoWe8ZUMjo_WeboEXU1l",
           "mTntiVzss5Ff6cnebruJt",
+          "lwJdaIpR0R7Zrp-yNqL1Q",
           "0J-x-ZKZFVp9FzKlatE7p",
-          "t10wdodjYYxGEf7Q_h7mt",
-          "lwJdaIpR0R7Zrp-yNqL1Q"
+          "t10wdodjYYxGEf7Q_h7mt"
         ],
         "ui": {
           "x": 651.4824,
@@ -211,7 +211,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1761209601823,
+          "updateAt": 1761220460734,
           "createAt": 1761200767351
         }
       },
@@ -1082,17 +1082,17 @@
         "name": "region_id",
         "comment": "지역 식별 코드",
         "dataType": "INT",
-        "default": "AUTO_INCREMENT",
+        "default": "",
         "options": 8,
         "ui": {
           "keys": 2,
           "widthName": 60,
           "widthComment": 81,
           "widthDataType": 60,
-          "widthDefault": 102
+          "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1761209418109,
+          "updateAt": 1761221139909,
           "createAt": 1761209418109
         }
       },
@@ -1400,8 +1400,8 @@
           "columnIds": [
             "nU2Hv6VCZSlfUFVhdh4aB"
           ],
-          "x": 346.3839,
-          "y": 426.3015,
+          "x": 323.7035,
+          "y": 432.4871,
           "direction": 4
         },
         "end": {
@@ -1456,8 +1456,8 @@
           "columnIds": [
             "nU2Hv6VCZSlfUFVhdh4aB"
           ],
-          "x": 587.8839,
-          "y": 490.3015,
+          "x": 565.2035,
+          "y": 496.4871,
           "direction": 2
         },
         "end": {
