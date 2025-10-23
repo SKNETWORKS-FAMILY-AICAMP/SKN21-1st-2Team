@@ -1,21 +1,18 @@
+"""
+Author: 
+Date: 
+Description: 환경변수 설정을 위한 config 파일
+"""
+
 # src/config/config.py
-"""
-Author: 우재현
-Date: 2025-10-23
-Description: 프로젝트 전체 공통 설정 파일 | DB 연결, 파일 경로, API 키 등 전역 설정 관리
-"""
-
 import os
-from dotenv import load_dotenv
-
-# .env 파일 호출(db 접속을 위한 민감 정보)
-load_dotenv()
 
 # 이름, 비밀번호 설정 필요
-DB_CONFIG = {
+DB_INFO = {
     "host": os.getenv("DB_HOST", "localhost"),
     "user": os.getenv("DB_USER", "root"),
     "password": os.getenv("DB_PASSWORD", ""),
+<<<<<<< HEAD
     "database": os.getenv("DB_NAME", ""),
     "port": int(os.getenv("DB_PORT", ""))
 }
@@ -39,4 +36,8 @@ LOG_CONFIG = {
 APP_CONFIG = {
     "title": "국내 친환경 자동차 비교 분석 서비스",
     "page_icon": "🚗",
+=======
+    "database": os.getenv("DB_NAME", "eco_car_db"),
+    "port": int(os.getenv("DB_PORT", 3306))
+>>>>>>> dde48335435b177e09137b9089194e0a447a2b08
 }
