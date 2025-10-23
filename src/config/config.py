@@ -17,8 +17,10 @@ DB_CONFIG = {
     "user": os.getenv("DB_USER", "root"),
     "password": os.getenv("DB_PASSWORD", ""),
     "database": os.getenv("DB_NAME", ""),
-    "port": int(os.getenv("DB_PORT", 3306))
+    "port": int(os.getenv("DB_PORT", ""))
 }
+
+print(DB_CONFIG)
 
 # 데이터 경로
 DATA_PATH = {
