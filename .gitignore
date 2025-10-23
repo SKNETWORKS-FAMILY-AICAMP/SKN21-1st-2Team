@@ -1,0 +1,64 @@
+# -------------------
+# Python
+# -------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+venv/
+env/
+ENV/
+*.env
+*.venv
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+
+# -------------------
+# Data files
+# -------------------
+
+# -------------------
+# Streamlit
+# -------------------
+
+
+# -----------------------------
+# Selenium / Webdriver
+# -----------------------------
+drivers/
+chromedriver*
+
+
+# -----------------------------
+# Build / Distribution
+# -----------------------------
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# -----------------------------
+# MySQL
+# -----------------------------
+*.sql
+*.cnf
+*.ini
+
+# -----------------------------
+# test
+# -----------------------------
+tests/
+
+
+# -----------------------------
+# secrets
+# -----------------------------
+src/
+config/
+.env
+
+
