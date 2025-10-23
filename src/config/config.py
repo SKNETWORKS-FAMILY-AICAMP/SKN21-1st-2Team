@@ -1,11 +1,14 @@
 """
-Author: 
-Date: 
+Author: 우재현
+Date: 25-10-23
 Description: 환경변수 설정을 위한 config 파일
 """
 
 # src/config/config.py
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # 이름, 비밀번호 설정 필요
 DB_CONFIG = {
@@ -15,8 +18,6 @@ DB_CONFIG = {
     "database": os.getenv("DB_NAME", ""),
     "port": int(os.getenv("DB_PORT", ""))
 }
-
-print(DB_CONFIG)
 
 # 데이터 경로
 DATA_PATH = {
