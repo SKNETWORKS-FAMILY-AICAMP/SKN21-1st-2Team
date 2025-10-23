@@ -60,5 +60,4 @@ tests/
 src/
 config/
 .env
-
-
+./DS_Store
