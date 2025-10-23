@@ -22,7 +22,7 @@ print(DB_CONFIG)
 DATA_PATH = {
     "RAW": "data/raw",
     "PROCESSED": "data/processd"
-
+    
 }
 
 # 로깅 설정
