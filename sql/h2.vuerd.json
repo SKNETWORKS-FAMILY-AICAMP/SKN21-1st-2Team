@@ -1,0 +1,1095 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dineug/erd-editor/main/json-schema/schema.json",
+  "version": "3.0.0",
+  "settings": {
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": -225.2276,
+    "scrollLeft": -278.9215,
+    "zoomLevel": 0.79,
+    "show": 431,
+    "database": 4,
+    "databaseName": "h2",
+    "canvasType": "ERD",
+    "language": 1,
+    "tableNameCase": 4,
+    "columnNameCase": 2,
+    "bracketType": 1,
+    "relationshipDataTypeSync": true,
+    "relationshipOptimization": false,
+    "columnOrder": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "maxWidthComment": -1,
+    "ignoreSaveSettings": 0
+  },
+  "doc": {
+    "tableIds": [
+      "Oo3W6JvqlIgU6kQpD20_V",
+      "mM68FPZd6ov9djjg5w-Tg",
+      "35AXF8rkqboHxW0wZnIBP",
+      "RcMeLJaCLrZ7wbkdHPFdg",
+      "8fE7y369QCIiDBCEnMp-R"
+    ],
+    "relationshipIds": [
+      "UeamVXcY3oX3fDnR1-Y6C",
+      "OPF_GYf6RqSoZTg-CgRtj"
+    ],
+    "indexIds": [],
+    "memoIds": []
+  },
+  "collections": {
+    "tableEntities": {
+      "Oo3W6JvqlIgU6kQpD20_V": {
+        "id": "Oo3W6JvqlIgU6kQpD20_V",
+        "name": "h2_station",
+        "comment": "수소차 충전소",
+        "columnIds": [
+          "uitvXytgVHcXEBi1Nk3Rl",
+          "FxwDSIo85wFKYXknrtNFf",
+          "_uVjt25bMEKWUujJtjMVa",
+          "b7LIhxH_0wgRMGHbAh8Gg",
+          "H-GOzHGjwMWilvzLa_yJN",
+          "2KPb_p1El8HvNrnaJ5Tw0",
+          "D_rXG6oejgHN7z3bOVXfA"
+        ],
+        "seqColumnIds": [
+          "uitvXytgVHcXEBi1Nk3Rl",
+          "FxwDSIo85wFKYXknrtNFf",
+          "_uVjt25bMEKWUujJtjMVa",
+          "b7LIhxH_0wgRMGHbAh8Gg",
+          "H-GOzHGjwMWilvzLa_yJN",
+          "SQQFYSU7jEP3ebOvYLC9I",
+          "8xFDBarQrlxVviayf_KmB",
+          "2KPb_p1El8HvNrnaJ5Tw0",
+          "D_rXG6oejgHN7z3bOVXfA"
+        ],
+        "ui": {
+          "x": 128.4092,
+          "y": 143.1817,
+          "zIndex": 2,
+          "widthName": 60,
+          "widthComment": 77,
+          "color": ""
+        },
+        "meta": {
+          "updateAt": 1761202204446,
+          "createAt": 1761190868660
+        }
+      },
+      "mM68FPZd6ov9djjg5w-Tg": {
+        "id": "mM68FPZd6ov9djjg5w-Tg",
+        "name": "h2_FAQ",
+        "comment": "수소차 충전소 인프라 FAQ",
+        "columnIds": [
+          "bbr4odJYBQg2JDSAlsygw",
+          "HxZWvnDjzkIdpIFl-Jmyf",
+          "2Ja9BgLggCJV-9dcQSYAI"
+        ],
+        "seqColumnIds": [
+          "bbr4odJYBQg2JDSAlsygw",
+          "HxZWvnDjzkIdpIFl-Jmyf",
+          "2Ja9BgLggCJV-9dcQSYAI"
+        ],
+        "ui": {
+          "x": 645.0871,
+          "y": 128.4497,
+          "zIndex": 3,
+          "widthName": 60,
+          "widthComment": 142,
+          "color": ""
+        },
+        "meta": {
+          "updateAt": 1761199939850,
+          "createAt": 1761197611374
+        }
+      },
+      "RcMeLJaCLrZ7wbkdHPFdg": {
+        "id": "RcMeLJaCLrZ7wbkdHPFdg",
+        "name": "charger_by_year",
+        "comment": "연도별 충전소",
+        "columnIds": [
+          "_z86mrWEAn_CoVy6YwmoV",
+          "XfwDrXSlkOXHthiYq_ith",
+          "-81ihzN_3HLQ4cJG7Uw-2"
+        ],
+        "seqColumnIds": [
+          "_z86mrWEAn_CoVy6YwmoV",
+          "XfwDrXSlkOXHthiYq_ith",
+          "-81ihzN_3HLQ4cJG7Uw-2"
+        ],
+        "ui": {
+          "x": 643.5322,
+          "y": 296.5164,
+          "zIndex": 46,
+          "widthName": 87,
+          "widthComment": 77,
+          "color": ""
+        },
+        "meta": {
+          "updateAt": 1761199939850,
+          "createAt": 1761197772062
+        }
+      },
+      "35AXF8rkqboHxW0wZnIBP": {
+        "id": "35AXF8rkqboHxW0wZnIBP",
+        "name": "h2_station_total",
+        "comment": "수소차 충전소 개수",
+        "columnIds": [
+          "ICBRKLzfF-OAP6qYF3gHh",
+          "tibT7e_HBHR16jqQ2aJG5",
+          "JSj139DCGHXRRl0C0zdbF",
+          "N7h_QqS1QRo8XSPaXpIOT",
+          "kffg-v68FFn5uMl2BI9LH"
+        ],
+        "seqColumnIds": [
+          "ICBRKLzfF-OAP6qYF3gHh",
+          "UPek-u_XmGp5lK4vPK9ga",
+          "6l8UqEQg_UkNLktsZ8f5u",
+          "tibT7e_HBHR16jqQ2aJG5",
+          "JSj139DCGHXRRl0C0zdbF",
+          "mr3fzmHwYmB_iXL2yAT3h",
+          "N7h_QqS1QRo8XSPaXpIOT",
+          "QghtFKwSnXoIKiwFr539n",
+          "kffg-v68FFn5uMl2BI9LH"
+        ],
+        "ui": {
+          "x": 147.9045,
+          "y": 486.1571,
+          "zIndex": 47,
+          "widthName": 85,
+          "widthComment": 105,
+          "color": ""
+        },
+        "meta": {
+          "updateAt": 1761202184553,
+          "createAt": 1761197773071
+        }
+      },
+      "8fE7y369QCIiDBCEnMp-R": {
+        "id": "8fE7y369QCIiDBCEnMp-R",
+        "name": "ev_station_total",
+        "comment": "전기차 충전소 개수",
+        "columnIds": [
+          "asTKRbpuA1K3E7iSVmwES",
+          "rC_FSoW4COY-0DNegf_vr",
+          "QcQopxlXk_W-K1qfxknpt",
+          "07yhhGXw5JDZ_XZYnFkGK"
+        ],
+        "seqColumnIds": [
+          "asTKRbpuA1K3E7iSVmwES",
+          "RwpO204FYcSwcgo4Xj2ss",
+          "XH5-LLNST7XTASiLN4T0j",
+          "rC_FSoW4COY-0DNegf_vr",
+          "QcQopxlXk_W-K1qfxknpt",
+          "tag0-A4FLP3mT9zVYN6JT",
+          "HB5YxQwpmWESF-4mpa-eW",
+          "KPD41bCiX4VVd9Ij-5LlO",
+          "4Cpft_TtGUxfHHHB8qydY",
+          "07yhhGXw5JDZ_XZYnFkGK"
+        ],
+        "ui": {
+          "x": 701.3277,
+          "y": 489.8132,
+          "zIndex": 274,
+          "widthName": 84,
+          "widthComment": 105,
+          "color": ""
+        },
+        "meta": {
+          "updateAt": 1761202280139,
+          "createAt": 1761200767351
+        }
+      }
+    },
+    "tableColumnEntities": {
+      "uitvXytgVHcXEBi1Nk3Rl": {
+        "id": "uitvXytgVHcXEBi1Nk3Rl",
+        "tableId": "Oo3W6JvqlIgU6kQpD20_V",
+        "name": "station_id",
+        "comment": "식별코드",
+        "dataType": "INT",
+        "default": "AUTO_INCREMENT",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 102
+        },
+        "meta": {
+          "updateAt": 1761201777540,
+          "createAt": 1761190908173
+        }
+      },
+      "FxwDSIo85wFKYXknrtNFf": {
+        "id": "FxwDSIo85wFKYXknrtNFf",
+        "tableId": "Oo3W6JvqlIgU6kQpD20_V",
+        "name": "station_name",
+        "comment": "충전소 이름",
+        "dataType": "VARCHAR(80)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 73,
+          "widthComment": 65,
+          "widthDataType": 75,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761191369924,
+          "createAt": 1761190908474
+        }
+      },
+      "_uVjt25bMEKWUujJtjMVa": {
+        "id": "_uVjt25bMEKWUujJtjMVa",
+        "tableId": "Oo3W6JvqlIgU6kQpD20_V",
+        "name": "region",
+        "comment": "충전소 지역",
+        "dataType": "VARCHAR(40)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 65,
+          "widthDataType": 75,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761191375760,
+          "createAt": 1761190908759
+        }
+      },
+      "b7LIhxH_0wgRMGHbAh8Gg": {
+        "id": "b7LIhxH_0wgRMGHbAh8Gg",
+        "tableId": "Oo3W6JvqlIgU6kQpD20_V",
+        "name": "pay",
+        "comment": "충전 가격",
+        "dataType": "INT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761201803420,
+          "createAt": 1761190909029
+        }
+      },
+      "H-GOzHGjwMWilvzLa_yJN": {
+        "id": "H-GOzHGjwMWilvzLa_yJN",
+        "tableId": "Oo3W6JvqlIgU6kQpD20_V",
+        "name": "tel",
+        "comment": "전화번호",
+        "dataType": "VARCHAR(20)",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 75,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761201992684,
+          "createAt": 1761190912997
+        }
+      },
+      "SQQFYSU7jEP3ebOvYLC9I": {
+        "id": "SQQFYSU7jEP3ebOvYLC9I",
+        "tableId": "Oo3W6JvqlIgU6kQpD20_V",
+        "name": "",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761191386208,
+          "createAt": 1761191386208
+        }
+      },
+      "bbr4odJYBQg2JDSAlsygw": {
+        "id": "bbr4odJYBQg2JDSAlsygw",
+        "tableId": "mM68FPZd6ov9djjg5w-Tg",
+        "name": "faq_id",
+        "comment": "식별코드",
+        "dataType": "INT",
+        "default": "AUTO INCREMENT",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 101
+        },
+        "meta": {
+          "updateAt": 1761202307923,
+          "createAt": 1761197653201
+        }
+      },
+      "HxZWvnDjzkIdpIFl-Jmyf": {
+        "id": "HxZWvnDjzkIdpIFl-Jmyf",
+        "tableId": "mM68FPZd6ov9djjg5w-Tg",
+        "name": "que",
+        "comment": "질문",
+        "dataType": "VARCHAR(300)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 81,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761202297516,
+          "createAt": 1761197653510
+        }
+      },
+      "2Ja9BgLggCJV-9dcQSYAI": {
+        "id": "2Ja9BgLggCJV-9dcQSYAI",
+        "tableId": "mM68FPZd6ov9djjg5w-Tg",
+        "name": "ans",
+        "comment": "답변",
+        "dataType": "VARCHAR(1000)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 87,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761202294448,
+          "createAt": 1761197653762
+        }
+      },
+      "_z86mrWEAn_CoVy6YwmoV": {
+        "id": "_z86mrWEAn_CoVy6YwmoV",
+        "tableId": "RcMeLJaCLrZ7wbkdHPFdg",
+        "name": "year",
+        "comment": "연도",
+        "dataType": "YEAR",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761202331687,
+          "createAt": 1761198330281
+        }
+      },
+      "XfwDrXSlkOXHthiYq_ith": {
+        "id": "XfwDrXSlkOXHthiYq_ith",
+        "tableId": "RcMeLJaCLrZ7wbkdHPFdg",
+        "name": "h2_car_total",
+        "comment": "수소차 충전소 등록 수",
+        "dataType": "INT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 65,
+          "widthComment": 120,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761199896064,
+          "createAt": 1761198330626
+        }
+      },
+      "-81ihzN_3HLQ4cJG7Uw-2": {
+        "id": "-81ihzN_3HLQ4cJG7Uw-2",
+        "tableId": "RcMeLJaCLrZ7wbkdHPFdg",
+        "name": "ev_car_total",
+        "comment": "전기차 충전소 등록 수",
+        "dataType": "INT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 64,
+          "widthComment": 120,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761199891329,
+          "createAt": 1761198330993
+        }
+      },
+      "ICBRKLzfF-OAP6qYF3gHh": {
+        "id": "ICBRKLzfF-OAP6qYF3gHh",
+        "tableId": "35AXF8rkqboHxW0wZnIBP",
+        "name": "region_id",
+        "comment": "식별코드",
+        "dataType": "INT",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761202268547,
+          "createAt": 1761198383478
+        }
+      },
+      "UPek-u_XmGp5lK4vPK9ga": {
+        "id": "UPek-u_XmGp5lK4vPK9ga",
+        "tableId": "35AXF8rkqboHxW0wZnIBP",
+        "name": "region",
+        "comment": "지역",
+        "dataType": "VARCHAR(20)",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 75,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761198462375,
+          "createAt": 1761198383899
+        }
+      },
+      "tibT7e_HBHR16jqQ2aJG5": {
+        "id": "tibT7e_HBHR16jqQ2aJG5",
+        "tableId": "35AXF8rkqboHxW0wZnIBP",
+        "name": "charger_number",
+        "comment": "충전소 개수",
+        "dataType": "INT",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 89,
+          "widthComment": 65,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761200914037,
+          "createAt": 1761198421256
+        }
+      },
+      "8xFDBarQrlxVviayf_KmB": {
+        "id": "8xFDBarQrlxVviayf_KmB",
+        "tableId": "Oo3W6JvqlIgU6kQpD20_V",
+        "name": "",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761198513252,
+          "createAt": 1761198513252
+        }
+      },
+      "JSj139DCGHXRRl0C0zdbF": {
+        "id": "JSj139DCGHXRRl0C0zdbF",
+        "tableId": "35AXF8rkqboHxW0wZnIBP",
+        "name": "station_id",
+        "comment": "식별코드",
+        "dataType": "INT",
+        "default": "AUTO_INCREMENT",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 102
+        },
+        "meta": {
+          "updateAt": 1761201701975,
+          "createAt": 1761199504942
+        }
+      },
+      "2KPb_p1El8HvNrnaJ5Tw0": {
+        "id": "2KPb_p1El8HvNrnaJ5Tw0",
+        "tableId": "Oo3W6JvqlIgU6kQpD20_V",
+        "name": "region_id",
+        "comment": "식별코드",
+        "dataType": "INT",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761202268547,
+          "createAt": 1761199850111
+        }
+      },
+      "asTKRbpuA1K3E7iSVmwES": {
+        "id": "asTKRbpuA1K3E7iSVmwES",
+        "tableId": "8fE7y369QCIiDBCEnMp-R",
+        "name": "region_id",
+        "comment": "식별코드",
+        "dataType": "INT",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761202231897,
+          "createAt": 1761200860937
+        }
+      },
+      "rC_FSoW4COY-0DNegf_vr": {
+        "id": "rC_FSoW4COY-0DNegf_vr",
+        "tableId": "8fE7y369QCIiDBCEnMp-R",
+        "name": "region",
+        "comment": "지역",
+        "dataType": "VARCHAR(20)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 75,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761202101285,
+          "createAt": 1761200861672
+        }
+      },
+      "RwpO204FYcSwcgo4Xj2ss": {
+        "id": "RwpO204FYcSwcgo4Xj2ss",
+        "tableId": "8fE7y369QCIiDBCEnMp-R",
+        "name": "region",
+        "comment": "지역",
+        "dataType": "VARCHAR(20)",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 75,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761200896551,
+          "createAt": 1761200896550
+        }
+      },
+      "QghtFKwSnXoIKiwFr539n": {
+        "id": "QghtFKwSnXoIKiwFr539n",
+        "tableId": "35AXF8rkqboHxW0wZnIBP",
+        "name": "",
+        "comment": "지역",
+        "dataType": "VARCHAR(20)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 75,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761201234702,
+          "createAt": 1761200897598
+        }
+      },
+      "QcQopxlXk_W-K1qfxknpt": {
+        "id": "QcQopxlXk_W-K1qfxknpt",
+        "tableId": "8fE7y369QCIiDBCEnMp-R",
+        "name": "station_total",
+        "comment": "전기차 충전소 개수",
+        "dataType": "INT",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 67,
+          "widthComment": 105,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761200945703,
+          "createAt": 1761200916392
+        }
+      },
+      "tag0-A4FLP3mT9zVYN6JT": {
+        "id": "tag0-A4FLP3mT9zVYN6JT",
+        "tableId": "8fE7y369QCIiDBCEnMp-R",
+        "name": "",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761200968163,
+          "createAt": 1761200947772
+        }
+      },
+      "HB5YxQwpmWESF-4mpa-eW": {
+        "id": "HB5YxQwpmWESF-4mpa-eW",
+        "tableId": "8fE7y369QCIiDBCEnMp-R",
+        "name": "",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761201162855,
+          "createAt": 1761201162855
+        }
+      },
+      "6l8UqEQg_UkNLktsZ8f5u": {
+        "id": "6l8UqEQg_UkNLktsZ8f5u",
+        "tableId": "35AXF8rkqboHxW0wZnIBP",
+        "name": "",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761201163389,
+          "createAt": 1761201163389
+        }
+      },
+      "mr3fzmHwYmB_iXL2yAT3h": {
+        "id": "mr3fzmHwYmB_iXL2yAT3h",
+        "tableId": "35AXF8rkqboHxW0wZnIBP",
+        "name": "",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761201174024,
+          "createAt": 1761201174024
+        }
+      },
+      "KPD41bCiX4VVd9Ij-5LlO": {
+        "id": "KPD41bCiX4VVd9Ij-5LlO",
+        "tableId": "8fE7y369QCIiDBCEnMp-R",
+        "name": "",
+        "comment": "",
+        "dataType": "VARCHAR(20)",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 75,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761201240226,
+          "createAt": 1761201199793
+        }
+      },
+      "N7h_QqS1QRo8XSPaXpIOT": {
+        "id": "N7h_QqS1QRo8XSPaXpIOT",
+        "tableId": "35AXF8rkqboHxW0wZnIBP",
+        "name": "region",
+        "comment": "지역",
+        "dataType": "VARCHAR(20)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 75,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761201240226,
+          "createAt": 1761201204019
+        }
+      },
+      "4Cpft_TtGUxfHHHB8qydY": {
+        "id": "4Cpft_TtGUxfHHHB8qydY",
+        "tableId": "8fE7y369QCIiDBCEnMp-R",
+        "name": "fk_region_id",
+        "comment": "FK",
+        "dataType": "INT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 66,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761202149384,
+          "createAt": 1761202122609
+        }
+      },
+      "XH5-LLNST7XTASiLN4T0j": {
+        "id": "XH5-LLNST7XTASiLN4T0j",
+        "tableId": "8fE7y369QCIiDBCEnMp-R",
+        "name": "fk_region_id",
+        "comment": "FK",
+        "dataType": "INT",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 66,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761202274514,
+          "createAt": 1761202179450
+        }
+      },
+      "kffg-v68FFn5uMl2BI9LH": {
+        "id": "kffg-v68FFn5uMl2BI9LH",
+        "tableId": "35AXF8rkqboHxW0wZnIBP",
+        "name": "",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761202184553,
+          "createAt": 1761202184553
+        }
+      },
+      "D_rXG6oejgHN7z3bOVXfA": {
+        "id": "D_rXG6oejgHN7z3bOVXfA",
+        "tableId": "Oo3W6JvqlIgU6kQpD20_V",
+        "name": "",
+        "comment": "",
+        "dataType": "INT",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761202218013,
+          "createAt": 1761202204446
+        }
+      },
+      "07yhhGXw5JDZ_XZYnFkGK": {
+        "id": "07yhhGXw5JDZ_XZYnFkGK",
+        "tableId": "8fE7y369QCIiDBCEnMp-R",
+        "name": "fk_region_id",
+        "comment": "FK",
+        "dataType": "INT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 2,
+          "widthName": 66,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761202278403,
+          "createAt": 1761202260135
+        }
+      }
+    },
+    "relationshipEntities": {
+      "JFohsuTle3cYvtkr-jSxD": {
+        "id": "JFohsuTle3cYvtkr-jSxD",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "Oo3W6JvqlIgU6kQpD20_V",
+          "columnIds": [
+            "uitvXytgVHcXEBi1Nk3Rl"
+          ],
+          "x": 238.1592,
+          "y": 343.1817,
+          "direction": 8
+        },
+        "end": {
+          "tableId": "35AXF8rkqboHxW0wZnIBP",
+          "columnIds": [
+            "JSj139DCGHXRRl0C0zdbF"
+          ],
+          "x": 233.083,
+          "y": 592.7506,
+          "direction": 4
+        },
+        "meta": {
+          "updateAt": 1761199801368,
+          "createAt": 1761199504942
+        }
+      },
+      "UeamVXcY3oX3fDnR1-Y6C": {
+        "id": "UeamVXcY3oX3fDnR1-Y6C",
+        "identification": false,
+        "relationshipType": 4,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "35AXF8rkqboHxW0wZnIBP",
+          "columnIds": [
+            "ICBRKLzfF-OAP6qYF3gHh"
+          ],
+          "x": 375.9045,
+          "y": 486.1571,
+          "direction": 4
+        },
+        "end": {
+          "tableId": "Oo3W6JvqlIgU6kQpD20_V",
+          "columnIds": [
+            "2KPb_p1El8HvNrnaJ5Tw0"
+          ],
+          "x": 348.4092,
+          "y": 367.1817,
+          "direction": 8
+        },
+        "meta": {
+          "updateAt": 1761199850111,
+          "createAt": 1761199850111
+        }
+      },
+      "apY-wY3svRWDWDhPB0qdn": {
+        "id": "apY-wY3svRWDWDhPB0qdn",
+        "identification": false,
+        "relationshipType": 2,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "8fE7y369QCIiDBCEnMp-R",
+          "columnIds": [
+            "HB5YxQwpmWESF-4mpa-eW"
+          ],
+          "x": 699.3277,
+          "y": 574.8132,
+          "direction": 1
+        },
+        "end": {
+          "tableId": "35AXF8rkqboHxW0wZnIBP",
+          "columnIds": [
+            "mr3fzmHwYmB_iXL2yAT3h"
+          ],
+          "x": 602.9045,
+          "y": 574.1571,
+          "direction": 2
+        },
+        "meta": {
+          "updateAt": 1761201174024,
+          "createAt": 1761201174024
+        }
+      },
+      "xHjehogwUUGK2GhCYxnX8": {
+        "id": "xHjehogwUUGK2GhCYxnX8",
+        "identification": false,
+        "relationshipType": 2,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "8fE7y369QCIiDBCEnMp-R",
+          "columnIds": [
+            "KPD41bCiX4VVd9Ij-5LlO"
+          ],
+          "x": 690.3277,
+          "y": 554.8132,
+          "direction": 1
+        },
+        "end": {
+          "tableId": "35AXF8rkqboHxW0wZnIBP",
+          "columnIds": [
+            "N7h_QqS1QRo8XSPaXpIOT"
+          ],
+          "x": 603.9045,
+          "y": 562.1571,
+          "direction": 2
+        },
+        "meta": {
+          "updateAt": 1761201204019,
+          "createAt": 1761201204019
+        }
+      },
+      "3dA9DN6UCpPZA8PLGe1zQ": {
+        "id": "3dA9DN6UCpPZA8PLGe1zQ",
+        "identification": false,
+        "relationshipType": 2,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "8fE7y369QCIiDBCEnMp-R",
+          "columnIds": [
+            "XH5-LLNST7XTASiLN4T0j"
+          ],
+          "x": 690.3277,
+          "y": 566.8132,
+          "direction": 1
+        },
+        "end": {
+          "tableId": "35AXF8rkqboHxW0wZnIBP",
+          "columnIds": [
+            "kffg-v68FFn5uMl2BI9LH"
+          ],
+          "x": 603.9045,
+          "y": 574.1571,
+          "direction": 2
+        },
+        "meta": {
+          "updateAt": 1761202184553,
+          "createAt": 1761202184553
+        }
+      },
+      "CbU9uAt9rLgJKIrdKyd2T": {
+        "id": "CbU9uAt9rLgJKIrdKyd2T",
+        "identification": false,
+        "relationshipType": 2,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "8fE7y369QCIiDBCEnMp-R",
+          "columnIds": [
+            "XH5-LLNST7XTASiLN4T0j"
+          ],
+          "x": 701.3277,
+          "y": 565.8132,
+          "direction": 1
+        },
+        "end": {
+          "tableId": "Oo3W6JvqlIgU6kQpD20_V",
+          "columnIds": [
+            "D_rXG6oejgHN7z3bOVXfA"
+          ],
+          "x": 568.4092,
+          "y": 255.1817,
+          "direction": 2
+        },
+        "meta": {
+          "updateAt": 1761202204446,
+          "createAt": 1761202204446
+        }
+      },
+      "OPF_GYf6RqSoZTg-CgRtj": {
+        "id": "OPF_GYf6RqSoZTg-CgRtj",
+        "identification": false,
+        "relationshipType": 2,
+        "startRelationshipType": 1,
+        "start": {
+          "tableId": "35AXF8rkqboHxW0wZnIBP",
+          "columnIds": [
+            "ICBRKLzfF-OAP6qYF3gHh"
+          ],
+          "x": 603.9045,
+          "y": 574.1571,
+          "direction": 2
+        },
+        "end": {
+          "tableId": "8fE7y369QCIiDBCEnMp-R",
+          "columnIds": [
+            "07yhhGXw5JDZ_XZYnFkGK"
+          ],
+          "x": 701.3277,
+          "y": 565.8132,
+          "direction": 1
+        },
+        "meta": {
+          "updateAt": 1761202260136,
+          "createAt": 1761202260136
+        }
+      }
+    },
+    "indexEntities": {},
+    "indexColumnEntities": {},
+    "memoEntities": {}
+  }
+}
