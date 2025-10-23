@@ -69,6 +69,6 @@ try:
 
 finally:
     df = pd.DataFrame.from_records(crawling_list)
-    df.to_excel('../../data/processed/Hydrogen_FAQ.xlsx')
+    df.to_excel('../../data/processed/H2_FAQ.xlsx')
     browser.close() # exit browser
 
