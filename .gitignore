@@ -20,16 +20,6 @@ ENV/
 # -------------------
 # Data files
 # -------------------
-data/raw/
-data/processed/
-*.csv
-*.xlsx
-*.xls
-*.json
-*.xml
-*.db
-*.sqlite
-*.sql
 
 # -------------------
 # Streamlit
