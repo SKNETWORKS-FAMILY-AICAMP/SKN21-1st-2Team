@@ -8,11 +8,10 @@ Description: 환경변수 설정을 위한 config 파일
 import os
 
 # 이름, 비밀번호 설정 필요
-DB_INFO = {
+DB_CONFIG = {
     "host": os.getenv("DB_HOST", "localhost"),
     "user": os.getenv("DB_USER", "root"),
     "password": os.getenv("DB_PASSWORD", ""),
-<<<<<<< HEAD
     "database": os.getenv("DB_NAME", ""),
     "port": int(os.getenv("DB_PORT", ""))
 }
