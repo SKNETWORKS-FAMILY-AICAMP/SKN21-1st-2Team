@@ -7,4 +7,3 @@ if __name__ == "__main__":
     # insert_data.h2_station_info("data\processed\h2_station_info.csv")
     # insert_data.h2_station_by_region("data\processed\h2_stations_by_region.csv")
     # insert_data.ev_station_by_region("data\processed\ev_stations_by_region.csv")
-    

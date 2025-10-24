@@ -3,13 +3,13 @@
 # DB에서 데이터 조회 (시각화용)
 
 """
-Author:
+Author: 우재현, 정덕규
 Date: 2025-10-23
 Description: 데이터 패치 파일
 """
 
 import pandas as pd
-from src.database.db_connection import get_connection
+from database.db_connection import get_connection
 #import db_connection as db_conn
 
 def fetch_station_info():
@@ -22,13 +22,12 @@ def fetch_station_info():
     cursor = conn.cursor()
 
     query = """
-    SELECT region, AVG(price)
-    FROM h2_station_info
-    GROUP BY region
-    ORDER BY station_id;
+    SELECT region, station_id
+    FROM h2_station_info;
     """
-    df = pd.read_sql(query, conn)
+    #df = pd.read_sql(query, conn)
 
+    print("수소차 충전소 정보")
     result = cursor.execute(query)
     print("query:", result)
     resultset = cursor.fetchall()
@@ -36,7 +35,7 @@ def fetch_station_info():
 
     conn.commit()
     conn.close()
-    return df
+    #return df
 
 def fetch_vehicle_trend():
     """
@@ -49,12 +48,11 @@ def fetch_vehicle_trend():
 
     query = """
     SELECT year, h2_car_total, h2_car_total
-    FROM annual_h2_ev_registrations
-    GROUP BY year
-    ORDER BY year desc;
+    FROM annual_h2_ev_registrations;
     """
-    df = pd.read_sql(query, conn)
+    #df = pd.read_sql(query, conn)
 
+    print("연도별 H2/EV 자동차 등록 현황 조회")
     result = cursor.execute(query)
     print("query:", result)
     resultset = cursor.fetchall()
@@ -62,7 +60,7 @@ def fetch_vehicle_trend():
 
     conn.commit()
     conn.close()
-    return df
+    #return df
 
 
 def fetch_station_count_by_region():
@@ -78,8 +76,9 @@ def fetch_station_count_by_region():
     SELECT * 
     FROM h2_stations_by_region;
     """
-    df = pd.read_sql(query, conn)
+    #df = pd.read_sql(query, conn)
 
+    print("지역별 수소차 충전소 개수 조회")
     result = cursor.execute(query)
     print("query:", result)
     resultset = cursor.fetchall()
@@ -88,7 +87,7 @@ def fetch_station_count_by_region():
     cursor.execute(query)
     conn.commit()
     conn.close()
-    return df
+    #return df
 
 def fetch_ev_stations_region():
     """
@@ -103,8 +102,9 @@ def fetch_ev_stations_region():
     SELECT *
     FROM ev_stations_by_region
     """
-    df = pd.read_sql(query, conn)
+    #df = pd.read_sql(query, conn)
 
+    print("지역별 전기차 충전소 개수")
     result = cursor.execute(query)
     print("query:", result)
     resultset = cursor.fetchall()
@@ -113,7 +113,7 @@ def fetch_ev_stations_region():
     cursor.execute(query)
     conn.commit()
     conn.close()
-    return df
+    #return df
 
 def fetch_faq():
     """
@@ -128,8 +128,9 @@ def fetch_faq():
     SELECT faq_id, question, answer
     FROM h2_faq;
     """
-    df = pd.read_sql(query, conn)
+    #df = pd.read_sql(query, conn)
 
+    print("수소차 충전소 인프라 FAQ")
     result = cursor.execute(query)
     print("query:", result)
     resultset = cursor.fetchall()
@@ -138,4 +139,4 @@ def fetch_faq():
     cursor.execute(query)
     conn.commit()
     conn.close()
-    return df
+    #return df
