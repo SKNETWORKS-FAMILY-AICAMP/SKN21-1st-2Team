@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import io
+from database import fetch_data
 
 # DB에서 연도별/수소차 등록 데이터 불러오기"
 # 쿼리문구 작성해야함
@@ -13,27 +14,3 @@ import io
 # df = get_vehicle_trend_data(conn)
 # fig = plot_vehicle_trend(df)
 # st.pyplot(fig)
-
-def get_vehicle_trend_data(conn):
-    query = """
-    SELECT year, type, SUM(count) as total
-    FROM vehicle_data
-    GROUP BY year, type
-    ORDER BY year;
-    """
-    df = pd.read_sql(query, conn)
-    return df
-
-# 시각화용 Matplotlib 그래프 생성
-# 쿼리문구 작성해야함
-def plot_vehicle_trend(df):
-    fig, ax = plt.subplots(figsize=(8, 4))
-    for t in df['type'].unique():
-        temp = df[df['type'] == t]
-        ax.plot(temp['year'], temp['total'], marker='o', label=t)
-    ax.set_title("전기차/수소차 연도별 등록 추세")
-    ax.set_xlabel("연도")
-    ax.set_ylabel("등록 대수")
-    ax.legend()
-    plt.tight_layout()
-    return fig
