@@ -1,15 +1,12 @@
 import pandas as pd
 
-
 import matplotlib.pyplot as plt
 from matplotlib import font_manager
 from matplotlib.ticker import ScalarFormatter
+from database.db_connection import get_connection
+
 import io
-from database import fetch_data
-
-from database import fetch_data
-
-<<<<<<< HEAD
+from src.database import fetch_data
 
 # def abc():
 #     print(fetch_data.fetch_vehicle_trend())
@@ -54,46 +51,44 @@ from database import fetch_data
 #     # print("123")
 
 
+def plot_graph():
+    conn = get_connection()
 
-df = fetch_data.fetch_vehicle_trend()
+    df = fetch_data.fetch_annual_h2_ev_registrations()
 
-if df.empty:
-    print("데이터가 없습니다. 그래프를 그릴 수 없습니다.")
-else:
-    # --- Mac 한글 폰트 설정
-    font_path = '/System/Library/Fonts/Supplemental/AppleGothic.ttf'
-    font_prop = font_manager.FontProperties(fname=font_path)
-    plt.rcParams['font.family'] = font_prop.get_name()
-    plt.rcParams['axes.unicode_minus'] = False
+    if df.empty:
+        print("데이터가 없습니다. 그래프를 그릴 수 없습니다.")
+    else:
+        # --- Mac 한글 폰트 설정
+        font_path = '/System/Library/Fonts/Supplemental/AppleGothic.ttf'
+        font_prop = font_manager.FontProperties(fname=font_path)
+        plt.rcParams['font.family'] = font_prop.get_name()
+        plt.rcParams['axes.unicode_minus'] = False
 
-    # --- y축 숫자 그대로 표시
-    formatter = ScalarFormatter(useMathText=False)
-    formatter.set_scientific(False)
+        # --- y축 숫자 그대로 표시
+        formatter = ScalarFormatter(useMathText=False)
+        formatter.set_scientific(False)
 
-    # --- 수소차 연도별 그래프
-    plt.figure(figsize=(10,5))
-    plt.plot(df["year"], df["h2_car_total"], marker="o", label="수소차 개수", color="blue")
-    plt.title("연도별 수소차 개수", fontsize=16)
-    plt.xlabel("연도")
-    plt.ylabel("차량 대수")
-    plt.grid(True)
-    plt.legend()
-    plt.gca().yaxis.set_major_formatter(formatter)
-    plt.show()
+        # --- 수소차 연도별 그래프
+        plt.figure(figsize=(10,5))
+        plt.plot(df["year"], df["h2_car_total"], marker="o", label="수소차 개수", color="blue")
+        plt.title("연도별 수소차 개수", fontsize=16)
+        plt.xlabel("연도")
+        plt.ylabel("차량 대수")
+        plt.grid(True)
+        plt.legend()
+        plt.gca().yaxis.set_major_formatter(formatter)
+        plt.show()
 
-    # --- 전기차 연도별 그래프
-    plt.figure(figsize=(10,5))
-    plt.plot(df["year"], df["ev_car_total"], marker="o", label="전기차 개수", color="green")
-    plt.title("연도별 전기차 개수", fontsize=16)
-    plt.xlabel("연도")
-    plt.ylabel("차량 대수")
-    plt.grid(True)
-    plt.legend()
-    plt.gca().yaxis.set_major_formatter(formatter)
-    plt.show()
-=======
-# conn = get_connection()
-# df = get_vehicle_trend_data(conn)
-# fig = plot_vehicle_trend(df)
-# st.pyplot(fig)
->>>>>>> 67b2648d732b55e2de8492a8d30ec1f13ffbe47d
+        # --- 전기차 연도별 그래프
+        plt.figure(figsize=(10,5))
+        plt.plot(df["year"], df["ev_car_total"], marker="o", label="전기차 개수", color="green")
+        plt.title("연도별 전기차 개수", fontsize=16)
+        plt.xlabel("연도")
+        plt.ylabel("차량 대수")
+        plt.grid(True)
+        plt.legend()
+        plt.gca().yaxis.set_major_formatter(formatter)
+        plt.show()
+
+

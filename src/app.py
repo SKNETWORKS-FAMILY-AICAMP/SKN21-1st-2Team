@@ -1,24 +1,21 @@
 from database import db_connection
-from database import insert_data
-# from src.database import fetch_data
+#from database import insert_data
+#from src.database import fetch_data
 import database.fetch_data as fs
-from visualization import plot
+from visualization import plot as pt
 
-import database.fetch_data as fs
-
-from visualization import plot
 
 if __name__ == "__main__":
 
-
-    plot.plot()
+    pt.plot_graph()
+    #plot.plot()
 
     # db_connection.get_connection()
     #insert_data.h2_faq("./../data/processed/h2_faq_clean.csv")
     #insert_data.annual_H2_ev_registrations("./../data/processed/annual_h2_ev_registrations.csv")
     #insert_data.h2_station_info("./../data/processed/h2_station_info_map.csv")
     #insert_data.h2_stations_by_region("./../data/processed/h2_stations_by_region_map.csv")
-    insert_data.ev_stations_by_region("./../data/processed/ev_stations_by_region_map.csv")
+    #insert_data.ev_stations_by_region("./../data/processed/ev_stations_by_region_map.csv")
     #insert_data.region("./../data/processed/region.csv")
 
     
@@ -29,4 +26,3 @@ if __name__ == "__main__":
     # fs.h2_stats()
     #fs.fetch_ev_stations_region() # 지역별 전기차 충전소 개수
     # fs.fetch_faq()
->>>>>>> 67b2648d732b55e2de8492a8d30ec1f13ffbe47d

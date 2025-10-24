@@ -94,7 +94,7 @@ def fetch_annual_h2_ev_registrations():
     cursor.execute(query)
     conn.commit()
     conn.close()
-    #return df
+    return resultset
 
 def fetch_ev_stations_region():
     """
