@@ -90,10 +90,10 @@ def fetch_annual_h2_ev_registrations():
     for row in resultset:
         print(row)
 
+    cursor.execute(query)
     conn.commit()
     conn.close()
     #return df
-
 
 def fetch_ev_stations_region():
     """
@@ -151,7 +151,7 @@ def h2_stats():
     cursor.execute(query)
     conn.commit()
     conn.close()
-    # return df
+    #return df
 
 def fetch_faq():
     """
