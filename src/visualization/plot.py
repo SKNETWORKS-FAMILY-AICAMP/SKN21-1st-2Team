@@ -5,9 +5,11 @@ import matplotlib.pyplot as plt
 from matplotlib import font_manager
 from matplotlib.ticker import ScalarFormatter
 import io
+from database import fetch_data
 
 from database import fetch_data
 
+<<<<<<< HEAD
 
 # def abc():
 #     print(fetch_data.fetch_vehicle_trend())
@@ -89,3 +91,9 @@ else:
     plt.legend()
     plt.gca().yaxis.set_major_formatter(formatter)
     plt.show()
+=======
+# conn = get_connection()
+# df = get_vehicle_trend_data(conn)
+# fig = plot_vehicle_trend(df)
+# st.pyplot(fig)
+>>>>>>> 67b2648d732b55e2de8492a8d30ec1f13ffbe47d
