@@ -6,25 +6,13 @@
 
 팀원 & GitHub
 
-| 이름   | 업무            | GitHub |
-|:-----:|:---------------:|:------:|
-| 이명준 | DB              | [nature0022](https://github.com/nature0022) |
-| 박민정 | Frontend        | [silentkit12w](https://github.com/silentkit12w) |
-| 우재현 | Backend         | [Wjaehyun](https://github.com/Wjaehyun) |
-| 안혜빈 | Data Processing | [hyebinhy](https://github.com/hyebinhy) |
-| 정덕규 | Web Crawling    | [duck213](https://github.com/duck213) |
-
-세부 담당 업무
-
-정덕규: 데이터 크롤링 (FAQ)    Selenium으로 정부지원 FAQ 수집, 백앤드(DB 데이터 insert, fetch)
-
-안혜빈: 데이터 전처리            CSV 정리, 결측치 처리, 표준화
-
-우재현: 백엔드 (핵심 데이터 로직, DB 연동, 설정 관리, 시각화 백단)    MySQL 연결, config 관리, 데이터 insert/select API, 시각화용 데이터 가공
-
-이명준: 데이터베이스 설계 및 구축    ERD 설계, 테이블 생성, 스키마 구축
-
-박민정: Streamlit 프론트엔드    UI/UX 구성, 차트 시각화, 페이지 이동
+| 이름   | 업무            | GitHub |       세부사항     |
+|:-----:|:---------------:|:------:| :---------------:|
+| 이명준 | DB              | [nature0022](https://github.com/nature0022) | 팀장, ERD 설계, 테이블 생성, 스키마 구축
+| 박민정 | Frontend        | [silentkit12](https://github.com/silentkit12) | UI/UX 구성, 차트 시각화, 페이지 이동
+| 우재현 | Backend         | [Wjaehyun](https://github.com/Wjaehyun) | MySQL 연결, config 관리, 데이터 insert/select API, 시각화용 데이터 가공
+| 안혜빈 | Data processing | [hyebinhy](https://github.com/hyebinhy) |  CSV 정리, 결측치 처리, 표준화  |
+| 정덕규 | Web Crawling    | [duck213](https://github.com/duck213) |  Selenium으로 정부지원 FAQ 수집, 백앤드(DB 데이터 insert, fetch)  |
 
 2️⃣ 프로젝트 개요
 #### 프로젝트 명
