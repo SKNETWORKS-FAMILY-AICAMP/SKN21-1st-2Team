@@ -81,15 +81,8 @@ def fetch_annual_h2_ev_registrations():
     SELECT year "연도", ev_car_total "전기차 등록대수", h2_car_total "수소차 등록대수"
     FROM annual_h2_ev_registrations;
     """
-    #df = pd.read_sql(query, conn)
-
-    print("연도별 H2/EV 자동차 등록 현황 조회")
     result = cursor.execute(query)
-    print("query:", result)
     resultset = cursor.fetchall()
-    #print("fetched:", resultset)
-    for row in resultset:
-        print(row)
     conn.close()
     return resultset
 
@@ -169,5 +162,5 @@ def fetch_faq():
 
     result = cursor.execute(query)
     resultset = cursor.fetchall()
-    print(resultset)
     conn.close()
+    return resultset
