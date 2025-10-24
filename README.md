@@ -6,13 +6,13 @@
 
 팀원 & GitHub
 
-    | 이름   | 업무        | 역할     |GitHub                                  |
-    | ---   | --------------- |--------- |--------------------------------------- |
-    | 이명준 | DB, DOCS |[🔗 GitHub](https://github.com/nature0022) |
-    | 박민정 | |Frontend |[🔗 GitHub](https://github.com/silentkit12w)    |
-    | 우재현 | | Backend  | [🔗 GitHub](https://github.com/Wjaehyun) |
-    | 안혜빈 | |DataProcessed| [🔗 GitHub](https://github.com/hyebinhy) |
-    | 정덕규 | |WebCrawling| [🔗 GitHub](https://github.com/duck213) |
+| 이름   | 업무            | GitHub |
+|:-----:|:---------------:|:------:|
+| 이명준 | DB              | [nature0022](https://github.com/nature0022) |
+| 박민정 | Frontend        | [silentkit12w](https://github.com/silentkit12w) |
+| 우재현 | Backend         | [Wjaehyun](https://github.com/Wjaehyun) |
+| 안혜빈 | Data Processing | [hyebinhy](https://github.com/hyebinhy) |
+| 정덕규 | Web Crawling    | [duck213](https://github.com/duck213) |
 
 담당 업무
 
