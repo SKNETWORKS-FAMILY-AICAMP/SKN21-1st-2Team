@@ -26,10 +26,6 @@ def fetch_h2_station_info():
     FROM h2_station_info
     group by region;
     """
-    #df = pd.read_sql(query, conn)
-    # select dept_name, job, min(salary), max(salary)
-    # from emp group by dept_name, job;
-    # format(avg(e.salary),2) 'avg'
 
     print("수소차 충전소 정보")
     result = cursor.execute(query)
