@@ -4,7 +4,7 @@
 
 """
 Author: 우재현, 정덕규
-Date: 2025-10-23
+Date: 2025-10-24
 Description: 데이터 패치 파일
 """
 
@@ -49,8 +49,9 @@ def fetch_h2_stations_by_region():
     cursor = conn.cursor()
 
     query = """
-    SELECT region, number_of_station
-    FROM h2_stations_by_region;
+    SELECT reg.region, number_of_station
+    FROM h2_stations_by_region h2
+    JOIN region reg ON h2.region_id = reg.region_id;
     """
     #df = pd.read_sql(query, conn)
 
@@ -105,8 +106,9 @@ def fetch_ev_stations_region():
     cursor = conn.cursor()
 
     query = """
-    SELECT region, number_of_station
-    FROM ev_stations_by_region
+    SELECT reg.region, number_of_station
+    FROM ev_stations_by_region ev
+    JOIN region reg ON ev.region_id = reg.region_id
     """
     #df = pd.read_sql(query, conn)
 
@@ -130,9 +132,10 @@ def h2_stats():
     cursor = conn.cursor()
 
     query = """
-       SELECT h2.region "지역", h2.number_of_station "수소차 충전소", ev.number_of_station "전기차 충전소"
+       SELECT reg.region "지역", h2.number_of_station "수소차 충전소", ev.number_of_station "전기차 충전소"
        FROM h2_stations_by_region h2
-       JOIN ev_stations_by_region ev ON h2.region_id = ev.region_id;
+       JOIN ev_stations_by_region ev ON h2.region_id = ev.region_id
+       JOIN region reg ON reg.region_id = ev.region_id;
        """
     # df = pd.read_sql(query, conn)
     # select e.emp_id, e.emp_name, e.salary, e.comm_pct, d.dept_name, d.loc
