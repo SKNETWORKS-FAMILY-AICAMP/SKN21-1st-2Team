@@ -1,13 +1,11 @@
 from database import db_connection
 # from database import insert_data
 from database import fetch_data
-# from visualization import plot
+from visualization import plot
 
 if __name__ == "__main__":
 
-    pt.plot_graph()
-    #plot.plot()
-    # plot.plot()
+    plot.plot()
 
     # db_connection.get_connection()
     #insert_data.h2_faq("./../data/processed/h2_faq_clean.csv")
@@ -26,4 +24,4 @@ if __name__ == "__main__":
     #fs.fetch_ev_stations_region() # 지역별 전기차 충전소 개수
     # fs.fetch_faq()
 
-    fetch_data.fetch_faq()
+    # fetch_data.fetch_faq() # faq 정상작동
