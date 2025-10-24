@@ -1,12 +1,18 @@
 # 전처리된 CSV 데이터를 MySQL 테이블에 저장하는 코드
 # (전처리 담당자 안혜빈 씨가 만든 CSV를 DB로 옮김)
 
+"""
+Author: 우재현, 정덕규
+Date: 2025-10-24
+Description: 데이터 패치 파일
+"""
+
 import pandas as pd
-from database.db_connection import get_connection
+from src.database.db_connection import get_connection
 
 #csv_path = h2_faq.csv
 def h2_faq(csv_path):
-    # df = pd.read_csv(csv_path) 
+    # df = pd.read_csv(csv_path)
     # print(df.columns) # ['Unnamed: 0', '0', '1']
     conn = get_connection()
     df = pd.read_csv(csv_path, names=["question", "answer"], header=0, skiprows=1)
@@ -45,21 +51,21 @@ def annual_H2_ev_registrations(csv_path):
 
 # csv_path = h2_station_info.csv
 def h2_station_info(csv_path):
-    # df = pd.read_csv(csv_path) 
-    # print(df.columns) # ['Unnamed: 0', 'station_name', 'region', 'price', 'tel']
+    # df = pd.read_csv(csv_path)
+    # print(df.columns) # ['Unnamed: 0', 'station_name', 'price', 'tel', 'region']
     conn = get_connection()
-    df = pd.read_csv(csv_path, names=["station_name", "region", "price", "tel"], header= 0, skiprows=1)
+    df = pd.read_csv(csv_path, names=["station_name", "region", "price", "tel", "region_id"], header= 0, skiprows=1)
     # df = df.where((pd.notnull(df)), 0)
     print(df)
 
     curs = conn.cursor()
     insert_sql = """
-    INSERT INTO h2_station_info (station_name, region, price, tel) 
+    INSERT INTO h2_station_info (station_name, price, tel, region_id) 
     VALUES (%s, %s, %s, %s);
     """
 
     for _, row in df.iterrows():
-        curs.execute(insert_sql, (row["station_name"], row["region"], int(row["price"]), row["tel"]))
+        curs.execute(insert_sql, (row["station_name"], int(row["price"]), row["tel"], int(row["region_id"])))
         
     conn.commit()
     conn.close()
@@ -69,15 +75,16 @@ def h2_stations_by_region(csv_path):
     # df = pd.read_csv(csv_path) 
     # print(df.columns) # ['region', 'number_of_station']
     conn = get_connection()
-    df = pd.read_csv(csv_path, names=["region", "number_of_station"], header = 0)
+    # region,number_of_station,region_id
+    df = pd.read_csv(csv_path, names=["region", "number_of_station", "region_id"], header = 0)
 
     curs = conn.cursor()
     insert_sql = """
-    INSERT INTO h2_stations_by_region (region, number_of_station) 
+    INSERT INTO h2_stations_by_region (region_id, number_of_station) 
     VALUES (%s, %s);
     """
     for _, row in df.iterrows():
-        curs.execute(insert_sql, (row["region"], int(row["number_of_station"])))
+        curs.execute(insert_sql, (row["region_id"], int(row["number_of_station"])))
         
     conn.commit()
     conn.close()
@@ -87,16 +94,41 @@ def ev_stations_by_region(csv_path):
     # df = pd.read_csv(csv_path) 
     # print(df.columns) # ['region', 'number_of_station']
     conn = get_connection()
-    df = pd.read_csv(csv_path, names=["region", "number_of_station"], header = 0)
+    df = pd.read_csv(csv_path, names=["region", "number_of_station", "region_id"], header = 0)
+    # region,number_of_station,region_id
     print(df.columns)
 
     curs = conn.cursor()
     insert_sql = """
-    INSERT INTO ev_stations_by_region (region, number_of_station) 
+    INSERT INTO ev_stations_by_region (region_id, number_of_station) 
     VALUES (%s, %s);
     """
     for _, row in df.iterrows():
-        curs.execute(insert_sql, (row["region"], int(row["number_of_station"])))
+        curs.execute(insert_sql, (row["region_id"], int(row["number_of_station"])))
         
     conn.commit()
-    conn.close()    
+    conn.close()
+
+
+def region(csv_path):
+
+    #df = pd.read_csv(csv_path)
+    #print(df.columns)
+
+    conn = get_connection()
+    
+    
+    df = pd.read_csv(csv_path, names=["region", "region_id"], header=0)
+
+    curs = conn.cursor()
+    insert_sql = """
+    INSERT INTO region (region, region_id) 
+    VALUES (%s, %s);
+    """
+    for _, row in df.iterrows():
+        curs.execute(insert_sql, (row["region"], int(row["region_id"])))
+
+
+    conn.commit()
+    conn.close()
+
