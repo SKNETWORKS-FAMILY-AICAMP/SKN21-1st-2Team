@@ -5,7 +5,7 @@ import pandas as pd
 from database.db_connection import get_connection
 
 #csv_path = h2_faq.csv
-def h2_FAQ(csv_path):
+def h2_faq(csv_path):
     # df = pd.read_csv(csv_path) 
     # print(df.columns) # ['Unnamed: 0', '0', '1']
     conn = get_connection()
