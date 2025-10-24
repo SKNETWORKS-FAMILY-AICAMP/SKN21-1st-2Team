@@ -9,7 +9,7 @@ def h2_FAQ(csv_path):
     # df = pd.read_csv(csv_path) 
     # print(df.columns) # ['Unnamed: 0', '0', '1']
     conn = get_connection()
-    df = pd.read_csv(csv_path, names=["question", "answer"], skiprows=1)
+    df = pd.read_csv(csv_path, names=["question", "answer"], header=0, skiprows=1)
 
     curs = conn.cursor()
     insert_sql = """
@@ -28,7 +28,7 @@ def annual_H2_ev_registrations(csv_path):
     # df = pd.read_csv(csv_path) 
     # print(df.columns) # ['year', 'h2_car_total', 'ev_car_total']
     conn = get_connection()
-    df = pd.read_csv(csv_path, names=["year", "h2_car_total", "ev_car_total"])
+    df = pd.read_csv(csv_path, names=["year", "h2_car_total", "ev_car_total"], header = 0)
     print(df.columns)
 
     curs = conn.cursor()
@@ -43,62 +43,60 @@ def annual_H2_ev_registrations(csv_path):
     conn.close()
 
 
-#region_id 어떻게 생성할 것인지
-#csv_path = h2_station_info.csv
-# def h2_station_info(csv_path):
-#     # df = pd.read_csv(csv_path) 
-#     # print(df.columns) # ['Unnamed: 0', 'station_name', 'region', 'price', 'tel']
-#     conn = get_connection()
-#     df = pd.read_csv(csv_path, names=["station_name", "region", "price", "tel", "region_id"], skiprows=1)
-#     print(df.columns)
+# csv_path = h2_station_info.csv
+def h2_station_info(csv_path):
+    # df = pd.read_csv(csv_path) 
+    # print(df.columns) # ['Unnamed: 0', 'station_name', 'region', 'price', 'tel']
+    conn = get_connection()
+    df = pd.read_csv(csv_path, names=["station_name", "region", "price", "tel"], header= 0, skiprows=1)
+    # df = df.where((pd.notnull(df)), 0)
+    print(df)
 
-#     curs = conn.cursor()
-#     insert_sql = """
-#     INSERT INTO h2_station_info (station_name, region, price, tel, region_id) 
-#     VALUES (%s, %s, %d, %s, %d);
-#     """
-#     for _, row in df.iterrows():
-#         curs.execute(insert_sql, (row["station_name"], row["region"], int(row["price"]), row["tel"], int(row["region_id"])))
+    curs = conn.cursor()
+    insert_sql = """
+    INSERT INTO h2_station_info (station_name, region, price, tel) 
+    VALUES (%s, %s, %s, %s);
+    """
+
+    for _, row in df.iterrows():
+        curs.execute(insert_sql, (row["station_name"], row["region"], int(row["price"]), row["tel"]))
         
-#     conn.commit()
-#     conn.close()
+    conn.commit()
+    conn.close()
 
-#region_id 어떻게 생성할 것인지 순서 뒤로 밀어도 되는지
 #csv_path = h2_station_by_region.csv
-# def h2_station_by_region(csv_path):
-#     # df = pd.read_csv(csv_path) 
-#     # print(df.columns) # ['region', 'number_of_station']
-#     conn = get_connection()
-#     df = pd.read_csv(csv_path, names=["region_id", "region", "number_of_station"])
-#     print(df.columns)
+def h2_stations_by_region(csv_path):
+    # df = pd.read_csv(csv_path) 
+    # print(df.columns) # ['region', 'number_of_station']
+    conn = get_connection()
+    df = pd.read_csv(csv_path, names=["region", "number_of_station"], header = 0)
 
-#     curs = conn.cursor()
-#     insert_sql = """
-#     INSERT INTO h2_station_by_region (region_id, region, number_of_station) 
-#     VALUES (%s, %s, %d);
-#     """
-#     # for _, row in df.iterrows():
-#         # curs.execute(insert_sql, (row["region_id"], row["region"], int(row["number_of_station"])))
+    curs = conn.cursor()
+    insert_sql = """
+    INSERT INTO h2_stations_by_region (region, number_of_station) 
+    VALUES (%s, %s);
+    """
+    for _, row in df.iterrows():
+        curs.execute(insert_sql, (row["region"], int(row["number_of_station"])))
         
-#     conn.commit()
-#     conn.close()    
+    conn.commit()
+    conn.close()
 
-#region_id 어떻게 생성할 것인지
-# #csv_path = ev_station_by_region.csv
-# def ev_station_by_region(csv_path):
-#     # df = pd.read_csv(csv_path) 
-#     # print(df.columns) # ['region', 'number_of_station']
-#     conn = get_connection()
-#     df = pd.read_csv(csv_path, names=["region", "number_of_station", "region_id"], header=0)
-#     print(df.columns)
+#csv_path = ev_station_by_region.csv
+def ev_stations_by_region(csv_path):
+    # df = pd.read_csv(csv_path) 
+    # print(df.columns) # ['region', 'number_of_station']
+    conn = get_connection()
+    df = pd.read_csv(csv_path, names=["region", "number_of_station"], header = 0)
+    print(df.columns)
 
-#     curs = conn.cursor()
-#     insert_sql = """
-#     INSERT INTO ev_station_by_region (region, number_of_station, region_id) 
-#     VALUES (%s, %s, %d);
-#     """
-#     # for _, row in df.iterrows():
-#     #     curs.execute(insert_sql, (row["region"], int(row["number_of_station"]), row["region_id"]))
+    curs = conn.cursor()
+    insert_sql = """
+    INSERT INTO ev_stations_by_region (region, number_of_station) 
+    VALUES (%s, %s);
+    """
+    for _, row in df.iterrows():
+        curs.execute(insert_sql, (row["region"], int(row["number_of_station"])))
         
-#     conn.commit()
-#     conn.close()    
+    conn.commit()
+    conn.close()    
