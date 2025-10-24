@@ -4,6 +4,7 @@
 Author: 안혜빈, 우재현
 Date: 2025-10-23
 Description: 데이터 전처리 모듈
+
 """
 
 # data/raw 에서 데이터 호출
@@ -17,6 +18,8 @@ Description: 데이터 전처리 모듈
 
 import pandas as pd
 import os
+import re
+import chardet  # type: ignore
 
 
 #csv파일로 변경
@@ -33,12 +36,55 @@ def pre_ev_year():
     pass
 
 #수소차 등록 연도별 데이터 전처리
+
+df = pd.read_csv("/Users/anhyebin/Documents/SKN21/SKN21-1st-2Team/data/raw/h2_year.csv", header=4)
+
+# 연도 컬럼만 선택
+years = df.columns[1:]  # 2018~2025
+
+# 합계(누적) 행 선택 — 첫 행만 사용
+total_row = df.iloc[0, 1:]  # 첫 행, 2018~2025 값만
+
+#연도별 값 추출
+years = df.columns[1:]  # 2018년~2025년
+values = [str(total_row[year]).replace(',', '') for year in years]  # 쉼표 제거
+values = list(map(int, values)) 
+
+#데이터프레임 생성
+result_df = pd.DataFrame({
+    'year': [y.replace('년','') for y in years],
+    'h2_car_total': values
+})
+
+
+result_df.to_csv("/Users/anhyebin/Documents/SKN21/SKN21-1st-2Team/data/raw/h2_car_yearly.csv", index=False, encoding='utf-8-sig')
+
 def pre_h2_year():
     pass
 
+
+
 #전기차 충전소 지역별 데이터 전처리
+
+df = pd.read_csv("/Users/anhyebin/Documents/SKN21/SKN21-1st-2Team/data/raw/ev_station.csv", header=3)
+
+selected = df.iloc[[0, 1]]
+
+# '충전속도'는 제외, '서울'부터 '합계'까지만 선택
+cols_to_sum = ['서울', '경기', '인천', '경상', '전라', '충청', '강원', '제주', '합계']
+sum_result = selected[cols_to_sum].sum(numeric_only=True)
+
+
+result_df = pd.DataFrame({
+    'region': sum_result.index,
+    'charger_number': sum_result.values
+})
+
+result_df.to_csv("/Users/anhyebin/Documents/SKN21/SKN21-1st-2Team/data/processed/ev_station_region_count.csv", index=False, encoding='utf-8-sig')
+
 def pre_ev_station():
     pass
+
 
 
 #수소차 충전소 지역별 데이터 전처리
@@ -113,8 +159,7 @@ def clean_tel(tel):
 df['tel'] = df['tel'].apply(clean_tel)
 
 
-# 상위 5줄 확인
-print(df.head())
+#print(df.head())
 
 save_path = '/Users/anhyebin/Documents/SKN21/SKN21-1st-2Team/data/processed'
 df.to_csv(save_path, index=False, encoding='utf-8-sig')
@@ -122,6 +167,44 @@ df.to_csv(save_path, index=False, encoding='utf-8-sig')
 
 
 
+#수소차, 전기차 연도별
+
+h2_df = pd.read_csv('/Users/anhyebin/Documents/SKN21/SKN21-1st-2Team/data/raw/h2_car_yearly.csv')
+ev_df = pd.read_csv('/Users/anhyebin/Documents/SKN21/SKN21-1st-2Team/data/raw/ev_car_yearly.csv')
+
+#year 기준으로 병합 (inner join)
+merged_df = pd.merge(h2_df, ev_df, on='year', how='inner')
+
+
+merged_df.to_csv("/Users/anhyebin/Documents/SKN21/SKN21-1st-2Team/data/processed/annual_h2_ev_registrations.csv", index=False, encoding='utf-8-sig')
+
+
+
 #FAQ 데이터 전처리
+
+
+#인코딩 감지
+with open("/Users/anhyebin/Documents/SKN21/SKN21-1st-2Team/data/processed/h2_faq.csv", "rb") as f:
+    enc = chardet.detect(f.read(10000))['encoding']
+#print(f"감지된 인코딩: {enc}")
+
+#감지된 인코딩으로 읽기
+df = pd.read_csv("/Users/anhyebin/Documents/SKN21/SKN21-1st-2Team/data/processed/h2_faq.csv", encoding=enc, dtype=str, keep_default_na=False)
+
+#비정상 공백(탭, non-breaking space 등) → 일반 공백
+def clean_text(x):
+    if isinstance(x, str):
+        # \u00A0: non-breaking space, \t: 탭, \r\n: 줄바꿈 등 제거 또는 변환
+        x = re.sub(r'[\u00A0\u200B\t\r\n]+', ' ', x)  # 이상한 공백 → 일반 공백
+        x = re.sub(r'\s{2,}', ' ', x)                 # 2칸 이상 → 1칸으로
+        x = x.strip()                                 # 앞뒤 공백 제거
+        return x
+    return x
+
+df = df.applymap(clean_text)
+
+df.to_csv("/Users/anhyebin/Documents/SKN21/SKN21-1st-2Team/data/processed/h2_faq_clean.csv", index=False, encoding='utf-8-sig')
+
 def pre_faq():
     pass
+
