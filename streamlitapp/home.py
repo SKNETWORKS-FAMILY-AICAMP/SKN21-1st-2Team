@@ -9,13 +9,6 @@ Description: 메인 구동 파일. streamlit run home.py로 실행할 예정
 import streamlit as st
 import pandas as pd
 import numpy as np
-
-
-# docs에 넣은 H2car 이미지를 메인에 넣어보고 싶은데 안 되네요.
-# 못 하면 메인 페이지 꾸밀만한 다른 거 찾아보기.
-
-
-import streamlit as st
 from streamlit_option_menu import option_menu
 import importlib
 
@@ -53,13 +46,16 @@ with st.sidebar:
 
 # 🧭 페이지 라우팅
 if selected == "메인":
-    st.title("🚗 국내 친환경 자동차 비교 분석 서비스")
+    st.title("🚗 국내 친환경 자동차 안내 서비스")
     st.markdown("---")
-    st.subheader("📊 서비스 소개")
+    st.subheader("📊 페이지 소개")
     st.write(
         """
-        이 애플리케이션은 국내 친환경 자동차에 대한 데이터를 기반으로
-        연도별 증감, 충전소 분포, FAQ, 그리고 충전소 조회 기능을 제공합니다.
+        해당 페이지는 국내 친환경 자동차에 대한 데이터를 기반으로 
+
+        연도별 수소차와 전기차의 증가 그래프, 
+        지역별 수소차의 충전소 분포, FAQ, 
+        그리고 수소차 충전소 조회 기능을 제공합니다.
 
         좌측 사이드바에서 원하는 기능을 선택하여 탐색해보세요! 🔍
         """
