@@ -1,6 +1,8 @@
 from database import db_connection
 from database import insert_data
 from database import fetch_data
+from src.database import fetch_data
+
 
 if __name__ == "__main__":
     # insert_data.h2_FAQ("data\processed\h2_faq.csv")
