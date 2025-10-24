@@ -14,7 +14,7 @@
 | 안혜빈 | Data Processing | [hyebinhy](https://github.com/hyebinhy) |
 | 정덕규 | Web Crawling    | [duck213](https://github.com/duck213) |
 
-담당 업무
+세부 담당 업무
 
 정덕규: 데이터 크롤링 (FAQ)    Selenium으로 정부지원 FAQ 수집, 백앤드(DB 데이터 insert, fetch)
 
@@ -106,12 +106,12 @@
 └── LICENSE                  # 라이선스 (MIT 권장)
 
 
-5️⃣ ERD
-   <img src="./mysql/ERD1.png" alt="ERD1" width="800"/>
-    별도 첨부
+---
+
+##  ERD
 
 
-7️⃣ 수행결과(테스트/시연 페이지)
+##  수행결과(테스트/시연 페이지)
 ---
 
 별도로 시연(?)
