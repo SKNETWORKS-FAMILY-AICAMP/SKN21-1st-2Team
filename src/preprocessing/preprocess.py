@@ -4,13 +4,12 @@
 Author: 안혜빈, 우재현
 Date: 2025-10-23
 Description: 데이터 전처리 모듈
-
 """
 
 # data/raw 에서 데이터 호출
 # 명준씨가 준 방법대로 데이터 가공
 # data/processed 폴더에 가공한 데이터 파일 저장
-
+ 
 
 
 #pip install pandas
