@@ -11,6 +11,7 @@ Description: 데이터 패치 파일
 import pandas as pd
 from database.db_connection import get_connection
 #import db_connection as db_conn
+import pymysql
 
 def fetch_station_info():
     """
@@ -125,18 +126,11 @@ def fetch_faq():
     cursor = conn.cursor()
 
     query = """
-    SELECT faq_id, question, answer
+    SELECT question, answer
     FROM h2_faq;
     """
-    #df = pd.read_sql(query, conn)
 
-    print("수소차 충전소 인프라 FAQ")
-    result = cursor.execute(query)
-    print("query:", result)
-    resultset = cursor.fetchall()
-    print("fetched:", resultset)
-
-    cursor.execute(query)
-    conn.commit()
-    conn.close()
-    #return df
+    with conn.cursor() as cursor:
+        result = cursor.execute(query)
+    resultset = cursor.fetchall() 
+    return resultset
