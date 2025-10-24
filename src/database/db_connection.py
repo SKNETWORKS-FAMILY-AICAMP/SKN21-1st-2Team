@@ -8,7 +8,7 @@ Description: MySQL 연결 관리 모듈
 
 import pymysql
 from pymysql.cursors import DictCursor
-from config.config import DB_CONFIG 
+from config.config import DB_CONFIG
 
 # MySQL DB 연결 객체를 반환
 
