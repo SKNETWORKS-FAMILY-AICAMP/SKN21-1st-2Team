@@ -1,16 +1,120 @@
 import pandas as pd
-import matplotlib.pyplot as plt
 import io
+
+import matplotlib.pyplot as plt
+from matplotlib import font_manager
+from matplotlib.ticker import ScalarFormatter
+
 from database import fetch_data
 
-# DB에서 연도별/수소차 등록 데이터 불러오기"
-# 쿼리문구 작성해야함
-# 박민정씨는 plot.py 에서 함수를 가져가서 출력물을 보이면 됩니다. 아래 주석 참고
-# import streamlit as st
-# from src.visualization.trend_plot import get_vehicle_trend_data, plot_vehicle_trend
-# from src.database.db_connection import get_connection
+def plot():
+    df = fetch_data.fetch_annual_h2_ev_registrations()  # DB에서 데이터 불러오기
+    print(df)
+    font_path = '/System/Library/Fonts/Supplemental/AppleGothic.ttf'
+    font_prop = font_manager.FontProperties(fname=font_path)
+    plt.rcParams['font.family'] = font_prop.get_name()
+    plt.rcParams['axes.unicode_minus'] = False
 
-# conn = get_connection()
-# df = get_vehicle_trend_data(conn)
-# fig = plot_vehicle_trend(df)
-# st.pyplot(fig)
+    #scale 설정
+    formatter = ScalarFormatter(useMathText=False)
+    formatter.set_scientific(False)
+
+    #수소차 연도별
+    plt.figure(figsize=(10, 5))
+    plt.plot(df["year"], df["h2_car_total"], marker="o", label="수소차 개수", color="blue")
+    plt.title("연도별 수소차 개수", fontsize=16)
+    plt.xlabel("연도")
+    plt.ylabel("차량 대수")
+    plt.grid(True)
+    plt.legend()
+    plt.gca().yaxis.set_major_formatter(formatter)
+    plt.show()
+
+    #전기차 연도별
+    plt.figure(figsize=(10, 5))
+    plt.plot(df["year"], df["ev_car_total"], marker="o", label="전기차 개수", color="green")
+    plt.title("연도별 전기차 개수", fontsize=16)
+    plt.xlabel("연도")
+    plt.ylabel("차량 대수")
+    plt.grid(True)
+    plt.legend()
+    plt.gca().yaxis.set_major_formatter(formatter)
+    plt.show()
+
+#     #수소차 연도별 
+#     plt.figure(figsize=(10, 5))
+#     plt.plot(df["year"], df["h2_car_total"], marker="o", label="수소차 개수", color="blue")
+#     plt.title("연도별 수소차 개수", fontsize=16)
+#     plt.xlabel("연도")
+#     plt.ylabel("차량 대수")
+#     plt.grid(True)
+#     plt.legend()
+#     plt.gca().yaxis.set_major_formatter(formatter)
+#     plt.show()
+
+#     #전기차 연도별
+#     plt.figure(figsize=(10, 5))
+#     plt.plot(df["year"], df["ev_car_total"], marker="o", label="전기차 개수", color="green")
+#     plt.title("연도별 전기차 개수", fontsize=16)
+#     plt.xlabel("연도")
+#     plt.ylabel("차량 대수")
+#     plt.grid(True)
+#     plt.legend()
+#     plt.gca().yaxis.set_major_formatter(formatter)
+#     plt.show()
+
+#     # print("123")
+
+
+def plot_graph():
+    conn = get_connection()
+
+    df = fetch_data.fetch_annual_h2_ev_registrations()
+
+    if df.empty:
+        print("데이터가 없습니다. 그래프를 그릴 수 없습니다.")
+    else:
+        # --- Mac 한글 폰트 설정
+        font_path = '/System/Library/Fonts/Supplemental/AppleGothic.ttf'
+        font_prop = font_manager.FontProperties(fname=font_path)
+        plt.rcParams['font.family'] = font_prop.get_name()
+        plt.rcParams['axes.unicode_minus'] = False
+
+        # --- y축 숫자 그대로 표시
+        formatter = ScalarFormatter(useMathText=False)
+        formatter.set_scientific(False)
+
+        # --- 수소차 연도별 그래프
+        plt.figure(figsize=(10,5))
+        plt.plot(df["year"], df["h2_car_total"], marker="o", label="수소차 개수", color="blue")
+        plt.title("연도별 수소차 개수", fontsize=16)
+        plt.xlabel("연도")
+        plt.ylabel("차량 대수")
+        plt.grid(True)
+        plt.legend()
+        plt.gca().yaxis.set_major_formatter(formatter)
+        plt.show()
+
+        # --- 전기차 연도별 그래프
+        plt.figure(figsize=(10,5))
+        plt.plot(df["year"], df["ev_car_total"], marker="o", label="전기차 개수", color="green")
+        plt.title("연도별 전기차 개수", fontsize=16)
+        plt.xlabel("연도")
+        plt.ylabel("차량 대수")
+        plt.grid(True)
+        plt.legend()
+        plt.gca().yaxis.set_major_formatter(formatter)
+        plt.show()
+
+
+
+    # --- 전기차 연도별 그래프
+    plt.figure(figsize=(10,5))
+    plt.plot(df["year"], df["ev_car_total"], marker="o", label="전기차 개수", color="green")
+    plt.title("연도별 전기차 개수", fontsize=16)
+    plt.xlabel("연도")
+    plt.ylabel("차량 대수")
+    plt.grid(True)
+    plt.legend()
+    plt.gca().yaxis.set_major_formatter(formatter)
+    plt.show()

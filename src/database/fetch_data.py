@@ -90,11 +90,8 @@ def fetch_annual_h2_ev_registrations():
     #print("fetched:", resultset)
     for row in resultset:
         print(row)
-
-    cursor.execute(query)
-    conn.commit()
     conn.close()
-    #return df
+    return resultset
 
 def fetch_ev_stations_region():
     """
@@ -169,18 +166,8 @@ def fetch_faq():
     SELECT question, answer
     FROM h2_faq;
     """
-    #df = pd.read_sql(query, conn)
 
-    print("수소차 충전소 인프라 FAQ")
     result = cursor.execute(query)
-    print("query:", result)
     resultset = cursor.fetchall()
-    #print("fetched:", resultset)
-
-    for row in resultset:
-        print(row)
-
-    cursor.execute(query)
-    conn.commit()
+    print(resultset)
     conn.close()
-    #return df
