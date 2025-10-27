@@ -22,7 +22,7 @@ def plot():
 
     #수소차 연도별
     plt.figure(figsize=(10, 5))
-    plt.plot(df["연도"], df["수소차 등록대수"], marker="o", label="수소차 개수", color="blue")
+    plt.plot(df["year"], df["h2_car_total"], marker="o", label="수소차 개수", color="blue")
     plt.title("연도별 수소차 개수", fontsize=16)
     plt.xlabel("연도")
     plt.ylabel("차량 대수")

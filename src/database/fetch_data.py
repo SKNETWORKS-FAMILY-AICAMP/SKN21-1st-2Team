@@ -78,7 +78,7 @@ def fetch_annual_h2_ev_registrations():
     cursor = conn.cursor()
 
     query = """
-    SELECT year "연도", ev_car_total "전기차 등록대수", h2_car_total "수소차 등록대수"
+    SELECT year, ev_car_total, h2_car_total
     FROM annual_h2_ev_registrations;
     """
     result = cursor.execute(query)
