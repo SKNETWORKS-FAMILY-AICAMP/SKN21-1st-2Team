@@ -8,7 +8,7 @@ Description: 데이터 패치 파일
 """
 
 import pandas as pd
-from src.database.db_connection import get_connection
+from database.db_connection import get_connection
 
 #csv_path = h2_faq.csv
 def h2_faq(csv_path):
@@ -56,16 +56,16 @@ def h2_station_info(csv_path):
     conn = get_connection()
     df = pd.read_csv(csv_path, names=["station_name", "region", "price", "tel", "region_id"], header= 0, skiprows=1)
     # df = df.where((pd.notnull(df)), 0)
-    print(df)
+    # print(df)
 
     curs = conn.cursor()
     insert_sql = """
-    INSERT INTO h2_station_info (station_name, price, tel, region_id) 
-    VALUES (%s, %s, %s, %s);
+    INSERT INTO h2_station_info (station_name, region, price, tel, region_id) 
+    VALUES (%s, %s, %s, %s, %s);
     """
 
     for _, row in df.iterrows():
-        curs.execute(insert_sql, (row["station_name"], int(row["price"]), row["tel"], int(row["region_id"])))
+        curs.execute(insert_sql, (row["station_name"], row["region"], int(row["price"]), row["tel"], int(row["region_id"])))
         
     conn.commit()
     conn.close()
@@ -96,7 +96,7 @@ def ev_stations_by_region(csv_path):
     conn = get_connection()
     df = pd.read_csv(csv_path, names=["region", "number_of_station", "region_id"], header = 0)
     # region,number_of_station,region_id
-    print(df.columns)
+    # print(df.columns)
 
     curs = conn.cursor()
     insert_sql = """
@@ -117,7 +117,7 @@ def region(csv_path):
 
     conn = get_connection()
     
-    
+
     df = pd.read_csv(csv_path, names=["region", "region_id"], header=0)
 
     curs = conn.cursor()
