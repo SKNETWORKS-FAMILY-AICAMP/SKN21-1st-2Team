@@ -6,7 +6,12 @@ Description: 환경변수 설정을 위한 config 파일
  
 # src/config/config.py
 import os
+import sys
 from dotenv import load_dotenv
+from pathlib import Path
+
+# PROJECT_ROOT = Path(__file__).reslove().parent.parent.parent
+# sys.path.insert(0, str(PROJECT_ROOT))
 
 load_dotenv()
 

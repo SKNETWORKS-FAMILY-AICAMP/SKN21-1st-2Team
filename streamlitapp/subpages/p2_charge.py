@@ -19,6 +19,5 @@ import numpy as np
 def app():
         st.title("⛽지역별 충전소 분포")
 
-        st.write("지역별 충전소 분포 원형 그래프")
         station_pie_fig = plot.station_pie_plot()
         st.pyplot(station_pie_fig)

@@ -2,6 +2,7 @@ from database import db_connection
 from database import insert_data
 from database import fetch_data
 from visualization import plot
+import pandas as pd
 
 if __name__ == "__main__":
 
@@ -14,11 +15,7 @@ if __name__ == "__main__":
     # 수소차 충전소 지역별 pie plot
     # plot.station_pie_plot()
 
-
-    db_connection.get_connection()
-
-
-    # 데이터 insert(1회)
+   # 데이터 insert(1회)
     # insert_data.region("data\processed\\region.csv")
     # insert_data.h2_faq("data\processed\h2_faq_clean.csv")
     # insert_data.annual_h2_ev_registrations("data\processed\\annual_h2_ev_registrations.csv")
@@ -32,3 +29,30 @@ if __name__ == "__main__":
     # fetch_data.h2_stats() # 지역별 수소, 전기차 충전소 개수
     # fetch_data.fetch_h2_stations_by_region() #지역별 수소차 충전소 개수 조회
     #fetch_data.fetch_ev_stations_region() # 지역별 전기차 충전소 개수
+
+    db_connection.get_connection()
+
+ 
+
+#충전소 인포 후처리 코드
+def postprocessing_optional_station(df : list):
+    # 전화번호 첫 번째 자리에 0 생략된 부분 다시 붙이기 
+    for i in range(len(df)):
+        df['tel'][i] = '0' + df['tel'][i]
+        if df['tel'][i] == '00':
+            df['tel'][i] = '-'
+
+
+    # price 단위(원) 붙이기
+    for i in range(len(df)):
+        df['price'][i] = str(df['price'][i]) + ' 원'
+
+
+    print('후처리 종료')
+    return df
+
+# 후처리, 이동 과정 보정
+def select_optional_station(option : str):
+    optional_df = pd.DataFrame(fetch_data.fetch_h2_station_info(option)) # type : tuple
+    postprocessing_optional_station(optional_df)
+    return optional_df

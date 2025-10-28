@@ -22,10 +22,8 @@ def app():
      st.title("📊 연도별 친환경차 등록 그래프")
      st.subheader("2018년~2025년 사이의 전기차와 수소차의 비교")
      
-     st.write("수소차 등록수")
      h2_fig = plot.h2_line_plot()
      st.pyplot(h2_fig)
 
-     st.write("전기차 등록수")
      ev_fig = plot.ev_line_plot()
      st.pyplot(ev_fig)

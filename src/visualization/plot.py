@@ -38,6 +38,7 @@ def ev_line_plot():
     
     return fig
 
+# 지역별 수소차 충전소 개수
 def station_pie_plot():
     data = fetch_data.fetch_h2_stations_by_region()
     df = pd.DataFrame(data, columns=["region", "number_of_station"])

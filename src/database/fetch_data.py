@@ -10,9 +10,8 @@ Description: 데이터 패치 파일
 
 import pandas as pd
 from database.db_connection import get_connection
-#import db_connection as db_conn
 
-def fetch_h2_station_info():
+def fetch_h2_station_info(option):
     """
     수소차 충전소 정보
     """
@@ -22,22 +21,51 @@ def fetch_h2_station_info():
     cursor = conn.cursor()
 
     query = """
-    SELECT region, format(avg(price),2) "평균가"
-    FROM h2_station_info
-    group by region;
+    SELECT si.station_name, si.price, si.tel , rg.region 
+    FROM h2_station_info AS si
+    LEFT OUTER JOIN region AS rg ON si.region_id = rg.region_id
+    where rg.region = %s 
     """
 
     print("수소차 충전소 정보")
-    result = cursor.execute(query)
+    result = cursor.execute(query, [option])
     print("query:", result)
     resultset = cursor.fetchall()
     #print("fetched:", resultset)
-    for row in resultset:
-        print(row)
-
+    # for row in resultset:
+    #     print(row)
     conn.commit()
     conn.close()
-    #return df
+
+    df_result = pd.DataFrame(resultset, columns = ['station_name', 'region', 'price', 'tel'])
+    return df_result
+
+# def fetch_h2_station_info():
+#     """
+#     수소차 충전소 정보
+#     """
+#     conn = get_connection()
+#     if conn is None:
+#         return pd.DataFrame()
+#     cursor = conn.cursor()
+
+#     query = """
+#     SELECT region, format(avg(price),2) "평균가"
+#     FROM h2_station_info
+#     group by region;
+#     """
+
+#     print("수소차 충전소 정보")
+#     result = cursor.execute(query)
+#     print("query:", result)
+#     resultset = cursor.fetchall()
+#     #print("fetched:", resultset)
+#     for row in resultset:
+#         print(row)
+
+#     conn.commit()
+#     conn.close()
+#     #return df
 
 def fetch_h2_stations_by_region():
     """
@@ -52,7 +80,7 @@ def fetch_h2_stations_by_region():
     SELECT reg.region, number_of_station
     FROM h2_stations_by_region h2
     JOIN region reg ON h2.region_id = reg.region_id
-    WHERE region in ('경기', '강원','서울', '경상', '전라', '충청', '제주');
+    WHERE region in ('경기','강원','서울', '경상', '전라', '충청', '제주');
     """
     #df = pd.read_sql(query, conn)
 
@@ -79,34 +107,34 @@ def fetch_annual_h2_ev_registrations():
     conn.close()
     return resultset
 
-def fetch_ev_stations_region():
-    """
-    지역별 전기차 충전소 개수
-    """
-    conn = get_connection()
-    if conn is None:
-        return pd.DataFrame()
-    cursor = conn.cursor()
+# def fetch_ev_stations_region():
+#     """
+#     지역별 전기차 충전소 개수
+#     """
+#     conn = get_connection()
+#     if conn is None:
+#         return pd.DataFrame()
+#     cursor = conn.cursor()
 
-    query = """
-    SELECT reg.region, number_of_station
-    FROM ev_stations_by_region ev
-    JOIN region reg ON ev.region_id = reg.region_id
-    """
-    #df = pd.read_sql(query, conn)
+#     query = """
+#     SELECT reg.region, number_of_station
+#     FROM ev_stations_by_region ev
+#     JOIN region reg ON ev.region_id = reg.region_id
+#     """
+#     #df = pd.read_sql(query, conn)
 
-    print("지역별 전기차 충전소 개수")
-    result = cursor.execute(query)
-    print("query:", result)
-    resultset = cursor.fetchall()
-    #print("fetched:", resultset)
-    for row in resultset:
-        print(row)
+#     print("지역별 전기차 충전소 개수")
+#     result = cursor.execute(query)
+#     print("query:", result)
+#     resultset = cursor.fetchall()
+#     #print("fetched:", resultset)
+#     for row in resultset:
+#         print(row)
 
-    cursor.execute(query)
-    conn.commit()
-    conn.close()
-    #return df
+#     cursor.execute(query)
+#     conn.commit()
+#     conn.close()
+#     #return df
 
 def h2_stats():
     conn = get_connection()
