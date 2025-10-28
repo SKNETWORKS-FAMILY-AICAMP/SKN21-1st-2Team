@@ -51,22 +51,15 @@ def fetch_h2_stations_by_region():
     query = """
     SELECT reg.region, number_of_station
     FROM h2_stations_by_region h2
-    JOIN region reg ON h2.region_id = reg.region_id;
+    JOIN region reg ON h2.region_id = reg.region_id
+    WHERE region in ('경기', '강원','서울', '경상', '전라', '충청', '제주');
     """
     #df = pd.read_sql(query, conn)
 
-    print("지역별 수소차 충전소 개수 조회")
     result = cursor.execute(query)
-    print("query:", result)
     resultset = cursor.fetchall()
-    #print("fetched:", resultset)
-    for row in resultset:
-        print(row)
-
-    cursor.execute(query)
-    conn.commit()
     conn.close()
-    #return df
+    return resultset
 
 def fetch_annual_h2_ev_registrations():
     """

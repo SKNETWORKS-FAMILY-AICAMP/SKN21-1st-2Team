@@ -12,7 +12,6 @@ import numpy as np
 from streamlit_option_menu import option_menu
 import importlib
 
-
 # 🔧 페이지 설정
 st.set_page_config(
     page_title="친환경 자동차 비교 분석 서비스",
