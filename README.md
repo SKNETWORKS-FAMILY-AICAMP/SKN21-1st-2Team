@@ -6,7 +6,7 @@
 
 `팀원 & GitHub`
  
-|캐릭터| 이름   | 업무            | GitHub |       세부사항     |
+|| 이름   | 업무            | GitHub |       세부사항     |
 |:-----:|:---------------:|:------:| :---------------:|:----------:|
 |<img src="https://icons.veryicon.com/png/o/internet--web/digital-monster/tokomon.png" alt=tokomon\ width="64px" height="64px">| 이명준 | DB              | [nature0022](https://github.com/nature0022) | 팀장, git builder, ERD 설계, 테이블 생성, 스키마 구축, 데이터 포멧 설계, sql query 작성, 조회 page (back, front)  |
 |<img src="https://icons.veryicon.com/png/o/internet--web/digital-monster/koromon.png" alt=agumon\ width="64px" height="64px">| 박민정 | Frontend        | [silentkit12](https://github.com/silentkit12) | UI/UX 구성, 차트 시각화, 페이지 이동
@@ -41,14 +41,63 @@
 
 ---
 
-## 3️⃣ 프로젝트 설계 
+## 3. 프로젝트 설계 
 
-###  ERD
+### 3.1. 프로젝트 디렉토리 구조
+
+```
+├── README.md                      # 프로젝트 개요 및 실행 가이드
+├── requirements.txt               # 의존성 패키지 목록
+├── tree.txt                       # 전체 디렉토리 트리
+│
+├── data/                          # 원본(raw) 및 전처리(processed) 데이터 저장 폴더
+├── docs/                          # 참고 문서 및 이미지 등 자료
+├── images/                        # Streamlit 페이지용 GIF 및 시각 자료
+├── sql/                           # SQL 쿼리 및 테이블 스키마 정의
+│
+├── src/                           # 백엔드 및 데이터 처리 로직
+│   ├── __init__.py
+│   ├── app.py                     # 메인 실행 스크립트 (DB 삽입 등 실행)
+│   ├── ex.ipynb                   # 테스트/예시용 노트북
+│   │
+│   ├── config/                    # 설정 관련 모듈
+│   │   ├── __init__.py
+│   │   └── config.py              # DB, 경로, 로그, 앱 환경 설정
+│   │
+│   ├── crawling/                  # 데이터 크롤링 모듈
+│   │   └── faq_data_crawler.py    # 정부 FAQ 데이터 수집 스크립트
+│   │
+│   ├── database/                  # DB 연동 관련 모듈
+│   │   ├── __init__.py
+│   │   ├── db_connection.py       # MySQL 연결 설정
+│   │   ├── fetch_data.py          # DB에서 데이터 조회 함수
+│   │   ├── insert_data.py         # CSV → DB 삽입 함수
+│   │   └── 참고자료.txt
+│   │
+│   ├── preprocessing/             # 데이터 전처리 관련 모듈
+│   │   └── preprocess.py          # CSV 파일 전처리 및 정제 로직
+│   │
+│   └── visualization/             # 그래프 및 시각화 모듈
+│       ├── __init__.py
+│       ├── plot.py                # matplotlib 기반 시각화 코드
+│       └── 참고자료.txt
+│
+└── streamlitapp/                  # Streamlit 프론트엔드 애플리케이션
+    ├── __init__.py
+    ├── home.py                    # 홈 화면
+    └── subpages/                  # 서브 페이지
+        ├── __init__.py
+        ├── p1_graph.py            # 전기차/수소차 통계 그래프
+        ├── p2_charge.py           # 충전소 위치 시각화
+        ├── p3_faq.py              # FAQ 조회 페이지
+        └── p4_search.py           # 지역별 충전소 검색 페이지
+```
+### 3.2. ERD
 
 <img width="1200" height="400" alt="ERD" src="https://github.com/user-attachments/assets/0bb1e200-1b26-45fc-8b44-5ad1a95ce792" />
 
 
-###  테이블 요약
+### 3.3. 테이블 요약
 | `entity` | `info` | `attribute` | `relationship` |
 | :--- | :--- | :--- | :--- |
 | **`region`** | 지역 정보 | `region` (PK), `region_id` | |
@@ -60,17 +109,17 @@
 
 ---
 
-## 4️⃣ 수행결과(테스트/시연 페이지)
+## 4️. 수행결과(테스트/시연 페이지)
 
-#### 0. 홈
+ 0. 홈
  <img width="1200" height="400" alt="home" src=".//images/0_home.gif" >
-#### 1. 전기차/수소차 연도별 등록수 증감 추세 그래프 도식화
+ 1. 전기차/수소차 연도별 등록수 증감 추세 그래프 도식화
 <img width="1200" height="400" alt="statics" src=".//images/1_statics.gif" />
-#### 2. 지역별 수소차 충전소 통계 수치화
+ 2. 지역별 수소차 충전소 통계 수치화
 <img width="1200" height="400" alt="graph" src=".//images/2_graph.gif" />
-#### 3. 수소차 충전소 관련 정부 지원 정보 제공 FAQ
+ 3. 수소차 충전소 관련 정부 지원 정보 제공 FAQ
 <img width="1200" height="400" alt="faq" src=".//images/3_faq.gif" />
-#### 4. 수소차 충전소 지역별로 조회
+ 4. 수소차 충전소 지역별로 조회
 <img width="1200" height="400" alt="select" src=".//images/4_select.gif" />
 
 
