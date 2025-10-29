@@ -9,7 +9,7 @@
 || 이름   | 업무            | GitHub |       세부사항     |
 |:-----:|:---------------:|:------:| :---------------:|:----------:|
 |<img src="https://icons.veryicon.com/png/o/internet--web/digital-monster/tokomon.png" alt=tokomon\ width="64px" height="64px">| 이명준 | DB              | [nature0022](https://github.com/nature0022) | 팀장, git builder, ERD 설계, 테이블 생성, 스키마 구축, 데이터 포멧 설계, sql query 작성, 조회 page (back, front)  |
-|<img src="https://icons.veryicon.com/png/o/internet--web/digital-monster/koromon.png" alt=agumon\ width="64px" height="64px">| 박민정 | Frontend        | [silentkit12](https://github.com/silentkit12) | UI/UX 구성, 차트 시각화, 페이지 이동
+|<img src="https://icons.veryicon.com/png/o/internet--web/digital-monster/plotmon.png" alt=agumon\ width="64px" height="64px">| 박민정 | Frontend        | [silentkit12](https://github.com/silentkit12) | UI/UX 구성, 차트 시각화, 페이지 이동
 |<img src="https://icons.veryicon.com/png/o/internet--web/digital-monster/tentomon.png" alt=tentomon\ width="64px" height="64px">| 우재현 | Backend         | [Wjaehyun](https://github.com/Wjaehyun) | MySQL 연결, config 관리, 데이터 insert/select API, 시각화용 데이터 가공
 |<img src="https://icons.veryicon.com/png/o/internet--web/digital-monster/koromon.png" alt=agumon\ width="64px" height="64px">| 안혜빈 | Data processing | [hyebinhy](https://github.com/hyebinhy) |  CSV 정리, 결측치 처리, 표준화  |
 |<img src="https://icons.veryicon.com/png/o/internet--web/digital-monster/koromon.png" alt=agumon\ width="64px" height="64px">| 정덕규 | Web Crawling    | [duck213](https://github.com/duck213) |  Selenium으로 정부지원 FAQ 수집, 백앤드(DB 데이터 insert, fetch)  |
@@ -142,7 +142,8 @@
 ---
 
 #### `박민정`
-> 작성 중
+> 이번 프로젝트를 통해서 협업을 시작 할 때에 설계의 방향을 어떠한 방식으로 구체화하고 합의한 뒤 진행해야 하는지, 개발자들의 프로젝트가 어떤 방식으로 진행되는지 알 수 있는 시간이 되었습니다.  
+처음으로 시도해본 코딩이어서 조원들을 비롯해 주변의 도움을 많이 받았습니다. 여러사람이 함께 git을 사용하는 방법, 디렉토리의 구성방법, 데이터의 전처리와 후처리에 대한 것, 수업만으로는 알 수 없었던 함수나 모듈의 활용법까지 실제로 사용해보고 구체적으로 배울 수 있었습니다. 자잘한 실수도 많았으나 오류가 생겼을 때, 조원들과 함께 머리를 맞대고 해결 방법을 찾아 끝내 해결하고 원하던 결과를 내었을 때의 즐거움을 잊지 못 할 것 같습니다. 첫 프로젝트를 진행하면서 제가 부족한 부분이 어떤 곳인지 보다 더 명확하게 확인할 수 있었으며, 다음 프로젝트가 시작되기 전 까지 이 부족한 부분들을 메꿔나가고자 합니다.
 
 ---
 
