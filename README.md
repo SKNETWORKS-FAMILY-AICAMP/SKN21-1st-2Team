@@ -12,7 +12,7 @@
 |<img src="https://icons.veryicon.com/png/o/internet--web/digital-monster/plotmon.png" alt=agumon\ width="64px" height="64px">| 박민정 | Frontend        | [silentkit12](https://github.com/silentkit12) | UI/UX 구성, 차트 시각화, 페이지 이동
 |<img src="https://icons.veryicon.com/png/o/internet--web/digital-monster/tentomon.png" alt=tentomon\ width="64px" height="64px">| 우재현 | Backend         | [Wjaehyun](https://github.com/Wjaehyun) | 백앤드(config, connection, insert, fetch, visualization), 데이터 insert/select API
 |<img src="https://icons.veryicon.com/png/o/internet--web/digital-monster/punimon.png" alt=agumon\ width="64px" height="64px">| 안혜빈 | Data processing | [hyebinhy](https://github.com/hyebinhy) |  CSV 정리, 결측치 처리, 표준화  |
-|<img src="https://icons.veryicon.com/png/o/internet--web/digital-monster/koromon.png" alt=agumon\ width="64px" height="64px">| 정덕규 | Web Crawling    | [duck213](https://github.com/duck213) |  Selenium으로 정부지원 FAQ 수집, 백앤드(DB 데이터 insert, fetch)  |
+|<img src="https://icons.veryicon.com/png/o/internet--web/digital-monster/yukimibotamon.png" alt=yukimibotamon\ width="64px" height="64px">| 정덕규 | Web Crawling    | [duck213](https://github.com/duck213) |  Selenium으로 정부지원 FAQ 수집, 백앤드(DB 데이터 insert, fetch)  |
 
 ---
 
@@ -94,7 +94,7 @@
 ```
 ### 3.2. ERD
 
-<img width="1200" height="400" alt="ERD" src="https://github.com/user-attachments/assets/0bb1e200-1b26-45fc-8b44-5ad1a95ce792" />
+<img width="862" height="542" alt="ERD" src="https://github.com/user-attachments/assets/f201f49f-96d6-493a-97ae-a27d4f433b03" />
 
 
 ### 3.3. 테이블 요약
