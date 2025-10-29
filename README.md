@@ -11,7 +11,7 @@
 |<img src="https://icons.veryicon.com/png/o/internet--web/digital-monster/tokomon.png" alt=tokomon\ width="64px" height="64px">| 이명준 | DB              | [nature0022](https://github.com/nature0022) | 팀장, git builder, ERD 설계, 테이블 생성, 스키마 구축, 데이터 포멧 설계, sql query 작성, 조회 page (back, front)  |
 |<img src="https://icons.veryicon.com/png/o/internet--web/digital-monster/plotmon.png" alt=agumon\ width="64px" height="64px">| 박민정 | Frontend        | [silentkit12](https://github.com/silentkit12) | UI/UX 구성, 차트 시각화, 페이지 이동
 |<img src="https://icons.veryicon.com/png/o/internet--web/digital-monster/tentomon.png" alt=tentomon\ width="64px" height="64px">| 우재현 | Backend         | [Wjaehyun](https://github.com/Wjaehyun) | MySQL 연결, config 관리, 데이터 insert/select API, 시각화용 데이터 가공
-|<img src="https://icons.veryicon.com/png/o/internet--web/digital-monster/Punimon.png" alt=agumon\ width="64px" height="64px">| 안혜빈 | Data processing | [hyebinhy](https://github.com/hyebinhy) |  CSV 정리, 결측치 처리, 표준화  |
+|<img src="https://icons.veryicon.com/png/o/internet--web/digital-monster/punimon.png" alt=agumon\ width="64px" height="64px">| 안혜빈 | Data processing | [hyebinhy](https://github.com/hyebinhy) |  CSV 정리, 결측치 처리, 표준화  |
 |<img src="https://icons.veryicon.com/png/o/internet--web/digital-monster/koromon.png" alt=agumon\ width="64px" height="64px">| 정덕규 | Web Crawling    | [duck213](https://github.com/duck213) |  Selenium으로 정부지원 FAQ 수집, 백앤드(DB 데이터 insert, fetch)  |
 
 ---
